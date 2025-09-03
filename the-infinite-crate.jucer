@@ -1,0 +1,1452 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="LWUQJ4" name="The Infinite Crate" projectType="audioplug"
+              useAppConfig="0" addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1"
+              companyName="Magenta" cppLanguageStandard="20" pluginCharacteristicsValue="pluginIsSynth,pluginWantsMidiIn"
+              companyWebsite="https://magenta.withgoogle.com" version="0.1.0"
+              pluginDesc="The Infinite Crate is an experimental generative music plugin built on Lyria RealTime x Gemini API"
+              pluginName="The Infinite Crate">
+  <MAINGROUP id="gZBG0K" name="The Infinite Crate">
+    <GROUP id="{AB7F8C63-A6F3-8056-8757-E1EB29C42416}" name="plugin">
+      <GROUP id="{F9A14281-A3D7-FC7B-CA05-D8C839D96A78}" name="audio">
+        <FILE id="SC9h1W" name="AudioEngine.cc" compile="1" resource="0" file="plugin/audio/AudioEngine.cc"/>
+        <FILE id="nVwygF" name="AudioEngine.h" compile="0" resource="0" file="plugin/audio/AudioEngine.h"/>
+        <FILE id="ou54iG" name="CircularBuffer.cc" compile="1" resource="0"
+              file="plugin/audio/CircularBuffer.cc"/>
+        <FILE id="rGec2o" name="CircularBuffer.h" compile="0" resource="0"
+              file="plugin/audio/CircularBuffer.h"/>
+        <FILE id="mQx3dg" name="Transport.cc" compile="1" resource="0" file="plugin/audio/Transport.cc"/>
+        <FILE id="j9z6wv" name="Transport.h" compile="0" resource="0" file="plugin/audio/Transport.h"/>
+      </GROUP>
+      <GROUP id="{779E7A77-2291-01E0-507F-059E616F1691}" name="data">
+        <GROUP id="{80FE7AD7-FCAF-D2BF-C0F8-75911723A9D3}" name="types">
+          <FILE id="zpCxhh" name="GeminiTypes.h" compile="0" resource="0" file="plugin/data/types/GeminiTypes.h"/>
+          <FILE id="Eoa67D" name="StateTypes.h" compile="0" resource="0" file="plugin/data/types/StateTypes.h"/>
+          <FILE id="ldRQZK" name="Types.h" compile="0" resource="0" file="plugin/data/types/Types.h"/>
+        </GROUP>
+        <FILE id="CnV4Pw" name="State.cc" compile="1" resource="0" file="plugin/data/State.cc"/>
+        <FILE id="ZRf9Pr" name="State.h" compile="0" resource="0" file="plugin/data/State.h"/>
+      </GROUP>
+      <GROUP id="{D9E18E77-730B-D8B3-ED72-2E06DC0202F0}" name="networking">
+        <FILE id="txTSbm" name="Gemini.cc" compile="1" resource="0" file="plugin/networking/Gemini.cc"/>
+        <FILE id="TtJx2F" name="Gemini.h" compile="0" resource="0" file="plugin/networking/Gemini.h"/>
+        <FILE id="PAmRhW" name="WebBridge.cc" compile="1" resource="0" file="plugin/networking/WebBridge.cc"/>
+        <FILE id="o70Rai" name="WebBridge.h" compile="0" resource="0" file="plugin/networking/WebBridge.h"/>
+        <FILE id="bOnLXf" name="WebSocket.cc" compile="1" resource="0" file="plugin/networking/WebSocket.cc"/>
+        <FILE id="iStgsd" name="WebSocket.h" compile="0" resource="0" file="plugin/networking/WebSocket.h"/>
+      </GROUP>
+      <GROUP id="{3AC162A0-6075-EAFD-6C6C-BE9CD1B67EA6}" name="ui">
+        <FILE id="qxxRyY" name="Container.cc" compile="1" resource="0" file="plugin/ui/Container.cc"/>
+        <FILE id="fpA2nh" name="Container.h" compile="0" resource="0" file="plugin/ui/Container.h"/>
+      </GROUP>
+      <GROUP id="{A15A5585-AB12-0341-860A-B5386ECD05CB}" name="utils">
+        <FILE id="bv5K4v" name="Aliases.h" compile="0" resource="0" file="plugin/utils/Aliases.h"/>
+        <FILE id="RSxCfJ" name="Constants.h" compile="0" resource="0" file="plugin/utils/Constants.h"/>
+        <FILE id="Dk4Is2" name="Functions.h" compile="0" resource="0" file="plugin/utils/Functions.h"/>
+        <FILE id="E4kbDL" name="Optionals.h" compile="0" resource="0" file="plugin/utils/Optionals.h"/>
+      </GROUP>
+      <FILE id="jjEqlq" name="Processor.cc" compile="1" resource="0" file="plugin/Processor.cc"/>
+      <FILE id="K1Fr7m" name="Processor.h" compile="0" resource="0" file="plugin/Processor.h"/>
+    </GROUP>
+    <GROUP id="{82E9B8A9-DE12-B1DE-30BA-40AF883FEA2B}" name="resources">
+      <GROUP id="{A781375A-C169-AF3A-EB3A-C7EE5E537A42}" name="dom">
+        <FILE id="m5oTcw" name="index.css" compile="0" resource="0" file="resources/dom/index.css"
+              xcodeResource="1"/>
+        <FILE id="fYE1Gr" name="index.html" compile="0" resource="0" file="resources/dom/index.html"
+              xcodeResource="1"/>
+        <FILE id="h5zzIe" name="index.js" compile="0" resource="0" file="resources/dom/index.js"
+              xcodeResource="1"/>
+      </GROUP>
+      <GROUP id="{13DB9E68-735F-F707-A2DC-D9E834549D97}" name="fonts">
+        <FILE id="xVllIt" name="GoogleSansCode-Variable.ttf" compile="0" resource="0"
+              file="resources/fonts/GoogleSansCode-Variable.ttf" xcodeResource="1"/>
+        <FILE id="wg4XuU" name="GoogleSansCode-VariableItalic.ttf" compile="0"
+              resource="0" file="resources/fonts/GoogleSansCode-VariableItalic.ttf"
+              xcodeResource="1"/>
+      </GROUP>
+      <GROUP id="{6BDBE5E4-961A-60B1-CBB0-99DDACB9DCD4}" name="img">
+        <FILE id="VN1BuS" name="magenta.png" compile="0" resource="0" file="resources/img/magenta.png"
+              xcodeResource="1"/>
+      </GROUP>
+      <GROUP id="{1B32352C-B07A-3286-A644-3953C132A607}" name="json">
+        <FILE id="afMrHP" name="schema.json" compile="0" resource="1" file="resources/json/schema.json"/>
+        <FILE id="Y1Ii8J" name="states.json" compile="0" resource="0" file="resources/json/states.json"
+              xcodeResource="0"/>
+      </GROUP>
+    </GROUP>
+    <GROUP id="{935828FF-7EE9-A7D0-C293-FDB78C9A3898}" name="third_party">
+      <GROUP id="{F55C8E30-D06A-FADD-150D-D18EE768E5FD}" name="asio">
+        <GROUP id="{88378F7F-1E2C-B88D-D899-7409A74BEB53}" name="asio">
+          <GROUP id="{1DE3F0F1-2A1A-E3D6-EB01-BC418BA00C0B}" name="detail">
+            <GROUP id="{6260F318-1FC3-E33D-0F38-183DB1F0152D}" name="impl">
+              <FILE id="tr4hvj" name="buffer_sequence_adapter.ipp" compile="0" resource="1"
+                    file="third_party/asio/asio/include/asio/detail/impl/buffer_sequence_adapter.ipp"/>
+              <FILE id="Xwi8T4" name="descriptor_ops.ipp" compile="0" resource="1"
+                    file="third_party/asio/asio/include/asio/detail/impl/descriptor_ops.ipp"/>
+              <FILE id="M56RQp" name="dev_poll_reactor.hpp" compile="0" resource="0"
+                    file="third_party/asio/asio/include/asio/detail/impl/dev_poll_reactor.hpp"/>
+              <FILE id="bJxruj" name="dev_poll_reactor.ipp" compile="0" resource="1"
+                    file="third_party/asio/asio/include/asio/detail/impl/dev_poll_reactor.ipp"/>
+              <FILE id="N1Uwjw" name="epoll_reactor.hpp" compile="0" resource="0"
+                    file="third_party/asio/asio/include/asio/detail/impl/epoll_reactor.hpp"/>
+              <FILE id="idNuR2" name="epoll_reactor.ipp" compile="0" resource="1"
+                    file="third_party/asio/asio/include/asio/detail/impl/epoll_reactor.ipp"/>
+              <FILE id="hMJXlj" name="eventfd_select_interrupter.ipp" compile="0"
+                    resource="1" file="third_party/asio/asio/include/asio/detail/impl/eventfd_select_interrupter.ipp"/>
+              <FILE id="GuQnyF" name="handler_tracking.ipp" compile="0" resource="1"
+                    file="third_party/asio/asio/include/asio/detail/impl/handler_tracking.ipp"/>
+              <FILE id="ryPc7h" name="io_uring_descriptor_service.ipp" compile="0"
+                    resource="1" file="third_party/asio/asio/include/asio/detail/impl/io_uring_descriptor_service.ipp"/>
+              <FILE id="ZvOLP1" name="io_uring_file_service.ipp" compile="0" resource="1"
+                    file="third_party/asio/asio/include/asio/detail/impl/io_uring_file_service.ipp"/>
+              <FILE id="RG8fNG" name="io_uring_service.hpp" compile="0" resource="0"
+                    file="third_party/asio/asio/include/asio/detail/impl/io_uring_service.hpp"/>
+              <FILE id="eiARJE" name="io_uring_service.ipp" compile="0" resource="1"
+                    file="third_party/asio/asio/include/asio/detail/impl/io_uring_service.ipp"/>
+              <FILE id="YfmFu7" name="io_uring_socket_service_base.ipp" compile="0"
+                    resource="1" file="third_party/asio/asio/include/asio/detail/impl/io_uring_socket_service_base.ipp"/>
+              <FILE id="KcjLiK" name="kqueue_reactor.hpp" compile="0" resource="0"
+                    file="third_party/asio/asio/include/asio/detail/impl/kqueue_reactor.hpp"/>
+              <FILE id="SRbhiy" name="kqueue_reactor.ipp" compile="0" resource="1"
+                    file="third_party/asio/asio/include/asio/detail/impl/kqueue_reactor.ipp"/>
+              <FILE id="Mahxia" name="null_event.ipp" compile="0" resource="1" file="third_party/asio/asio/include/asio/detail/impl/null_event.ipp"/>
+              <FILE id="QRyU7s" name="pipe_select_interrupter.ipp" compile="0" resource="1"
+                    file="third_party/asio/asio/include/asio/detail/impl/pipe_select_interrupter.ipp"/>
+              <FILE id="skJJfF" name="posix_event.ipp" compile="0" resource="1" file="third_party/asio/asio/include/asio/detail/impl/posix_event.ipp"/>
+              <FILE id="iruc3O" name="posix_mutex.ipp" compile="0" resource="1" file="third_party/asio/asio/include/asio/detail/impl/posix_mutex.ipp"/>
+              <FILE id="lf6Jr2" name="posix_serial_port_service.ipp" compile="0"
+                    resource="1" file="third_party/asio/asio/include/asio/detail/impl/posix_serial_port_service.ipp"/>
+              <FILE id="By89Zk" name="posix_thread.ipp" compile="0" resource="1"
+                    file="third_party/asio/asio/include/asio/detail/impl/posix_thread.ipp"/>
+              <FILE id="wIRMb6" name="posix_tss_ptr.ipp" compile="0" resource="1"
+                    file="third_party/asio/asio/include/asio/detail/impl/posix_tss_ptr.ipp"/>
+              <FILE id="aHLH7J" name="reactive_descriptor_service.ipp" compile="0"
+                    resource="1" file="third_party/asio/asio/include/asio/detail/impl/reactive_descriptor_service.ipp"/>
+              <FILE id="vvwwYI" name="reactive_socket_service_base.ipp" compile="0"
+                    resource="1" file="third_party/asio/asio/include/asio/detail/impl/reactive_socket_service_base.ipp"/>
+              <FILE id="vUIpV9" name="resolver_service_base.ipp" compile="0" resource="1"
+                    file="third_party/asio/asio/include/asio/detail/impl/resolver_service_base.ipp"/>
+              <FILE id="j1VmMV" name="scheduler.ipp" compile="0" resource="1" file="third_party/asio/asio/include/asio/detail/impl/scheduler.ipp"/>
+              <FILE id="TnGkSJ" name="select_reactor.hpp" compile="0" resource="0"
+                    file="third_party/asio/asio/include/asio/detail/impl/select_reactor.hpp"/>
+              <FILE id="glKHRk" name="select_reactor.ipp" compile="0" resource="1"
+                    file="third_party/asio/asio/include/asio/detail/impl/select_reactor.ipp"/>
+              <FILE id="GAJKNB" name="service_registry.hpp" compile="0" resource="0"
+                    file="third_party/asio/asio/include/asio/detail/impl/service_registry.hpp"/>
+              <FILE id="Wj73hS" name="service_registry.ipp" compile="0" resource="1"
+                    file="third_party/asio/asio/include/asio/detail/impl/service_registry.ipp"/>
+              <FILE id="iceqKP" name="signal_set_service.ipp" compile="0" resource="1"
+                    file="third_party/asio/asio/include/asio/detail/impl/signal_set_service.ipp"/>
+              <FILE id="bbfxAo" name="socket_ops.ipp" compile="0" resource="1" file="third_party/asio/asio/include/asio/detail/impl/socket_ops.ipp"/>
+              <FILE id="e4ueoC" name="socket_select_interrupter.ipp" compile="0"
+                    resource="1" file="third_party/asio/asio/include/asio/detail/impl/socket_select_interrupter.ipp"/>
+              <FILE id="le09r4" name="strand_executor_service.hpp" compile="0" resource="0"
+                    file="third_party/asio/asio/include/asio/detail/impl/strand_executor_service.hpp"/>
+              <FILE id="ro8SZf" name="strand_executor_service.ipp" compile="0" resource="1"
+                    file="third_party/asio/asio/include/asio/detail/impl/strand_executor_service.ipp"/>
+              <FILE id="e4I2dd" name="strand_service.hpp" compile="0" resource="0"
+                    file="third_party/asio/asio/include/asio/detail/impl/strand_service.hpp"/>
+              <FILE id="mbMlZ5" name="strand_service.ipp" compile="0" resource="1"
+                    file="third_party/asio/asio/include/asio/detail/impl/strand_service.ipp"/>
+              <FILE id="LBIk7k" name="thread_context.ipp" compile="0" resource="1"
+                    file="third_party/asio/asio/include/asio/detail/impl/thread_context.ipp"/>
+              <FILE id="OVn35D" name="throw_error.ipp" compile="0" resource="1" file="third_party/asio/asio/include/asio/detail/impl/throw_error.ipp"/>
+              <FILE id="D21DWD" name="timer_queue_ptime.ipp" compile="0" resource="1"
+                    file="third_party/asio/asio/include/asio/detail/impl/timer_queue_ptime.ipp"/>
+              <FILE id="DCKjS6" name="timer_queue_set.ipp" compile="0" resource="1"
+                    file="third_party/asio/asio/include/asio/detail/impl/timer_queue_set.ipp"/>
+              <FILE id="ydDKhp" name="win_event.ipp" compile="0" resource="1" file="third_party/asio/asio/include/asio/detail/impl/win_event.ipp"/>
+              <FILE id="xD8spo" name="win_iocp_file_service.ipp" compile="0" resource="1"
+                    file="third_party/asio/asio/include/asio/detail/impl/win_iocp_file_service.ipp"/>
+              <FILE id="E7TiJ2" name="win_iocp_handle_service.ipp" compile="0" resource="1"
+                    file="third_party/asio/asio/include/asio/detail/impl/win_iocp_handle_service.ipp"/>
+              <FILE id="L2XdZa" name="win_iocp_io_context.hpp" compile="0" resource="0"
+                    file="third_party/asio/asio/include/asio/detail/impl/win_iocp_io_context.hpp"/>
+              <FILE id="q9yU0x" name="win_iocp_io_context.ipp" compile="0" resource="1"
+                    file="third_party/asio/asio/include/asio/detail/impl/win_iocp_io_context.ipp"/>
+              <FILE id="oKbvVr" name="win_iocp_serial_port_service.ipp" compile="0"
+                    resource="1" file="third_party/asio/asio/include/asio/detail/impl/win_iocp_serial_port_service.ipp"/>
+              <FILE id="XlGU5q" name="win_iocp_socket_service_base.ipp" compile="0"
+                    resource="1" file="third_party/asio/asio/include/asio/detail/impl/win_iocp_socket_service_base.ipp"/>
+              <FILE id="agyOgU" name="win_mutex.ipp" compile="0" resource="1" file="third_party/asio/asio/include/asio/detail/impl/win_mutex.ipp"/>
+              <FILE id="M7dn8Y" name="win_object_handle_service.ipp" compile="0"
+                    resource="1" file="third_party/asio/asio/include/asio/detail/impl/win_object_handle_service.ipp"/>
+              <FILE id="wCEzqn" name="win_static_mutex.ipp" compile="0" resource="1"
+                    file="third_party/asio/asio/include/asio/detail/impl/win_static_mutex.ipp"/>
+              <FILE id="bMizy2" name="win_thread.ipp" compile="0" resource="1" file="third_party/asio/asio/include/asio/detail/impl/win_thread.ipp"/>
+              <FILE id="cZQsmo" name="win_tss_ptr.ipp" compile="0" resource="1" file="third_party/asio/asio/include/asio/detail/impl/win_tss_ptr.ipp"/>
+              <FILE id="B31Rtr" name="winrt_ssocket_service_base.ipp" compile="0"
+                    resource="1" file="third_party/asio/asio/include/asio/detail/impl/winrt_ssocket_service_base.ipp"/>
+              <FILE id="ma2rBP" name="winrt_timer_scheduler.hpp" compile="0" resource="0"
+                    file="third_party/asio/asio/include/asio/detail/impl/winrt_timer_scheduler.hpp"/>
+              <FILE id="kN368b" name="winrt_timer_scheduler.ipp" compile="0" resource="1"
+                    file="third_party/asio/asio/include/asio/detail/impl/winrt_timer_scheduler.ipp"/>
+              <FILE id="a9NyjK" name="winsock_init.ipp" compile="0" resource="1"
+                    file="third_party/asio/asio/include/asio/detail/impl/winsock_init.ipp"/>
+            </GROUP>
+            <FILE id="SimWqK" name="array.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/detail/array.hpp"/>
+            <FILE id="fjzR2c" name="array_fwd.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/detail/array_fwd.hpp"/>
+            <FILE id="GWkfk6" name="assert.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/detail/assert.hpp"/>
+            <FILE id="kgg57A" name="atomic_count.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/atomic_count.hpp"/>
+            <FILE id="XjhbWb" name="base_from_cancellation_state.hpp" compile="0"
+                  resource="0" file="third_party/asio/asio/include/asio/detail/base_from_cancellation_state.hpp"/>
+            <FILE id="JMsRvg" name="base_from_completion_cond.hpp" compile="0"
+                  resource="0" file="third_party/asio/asio/include/asio/detail/base_from_completion_cond.hpp"/>
+            <FILE id="fGpDPY" name="bind_handler.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/bind_handler.hpp"/>
+            <FILE id="xSvE4s" name="blocking_executor_op.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/blocking_executor_op.hpp"/>
+            <FILE id="nvfGRZ" name="buffer_resize_guard.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/buffer_resize_guard.hpp"/>
+            <FILE id="Se3OsV" name="buffer_sequence_adapter.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/buffer_sequence_adapter.hpp"/>
+            <FILE id="QsPecX" name="buffered_stream_storage.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/buffered_stream_storage.hpp"/>
+            <FILE id="Y8lyhI" name="bulk_executor_op.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/bulk_executor_op.hpp"/>
+            <FILE id="pofDBi" name="call_stack.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/detail/call_stack.hpp"/>
+            <FILE id="gAp5Vb" name="chrono.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/detail/chrono.hpp"/>
+            <FILE id="jtArDI" name="chrono_time_traits.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/chrono_time_traits.hpp"/>
+            <FILE id="pYOVmy" name="completion_handler.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/completion_handler.hpp"/>
+            <FILE id="CHuiAF" name="concurrency_hint.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/concurrency_hint.hpp"/>
+            <FILE id="Jmhuum" name="conditionally_enabled_event.hpp" compile="0"
+                  resource="0" file="third_party/asio/asio/include/asio/detail/conditionally_enabled_event.hpp"/>
+            <FILE id="JDukUq" name="conditionally_enabled_mutex.hpp" compile="0"
+                  resource="0" file="third_party/asio/asio/include/asio/detail/conditionally_enabled_mutex.hpp"/>
+            <FILE id="ucU0jl" name="config.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/detail/config.hpp"/>
+            <FILE id="fzfPlP" name="consuming_buffers.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/consuming_buffers.hpp"/>
+            <FILE id="IRsFDG" name="cstddef.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/detail/cstddef.hpp"/>
+            <FILE id="Iw107k" name="cstdint.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/detail/cstdint.hpp"/>
+            <FILE id="wUdXPj" name="date_time_fwd.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/date_time_fwd.hpp"/>
+            <FILE id="xYeLzt" name="deadline_timer_service.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/deadline_timer_service.hpp"/>
+            <FILE id="LNJI5f" name="dependent_type.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/dependent_type.hpp"/>
+            <FILE id="hjpNlz" name="descriptor_ops.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/descriptor_ops.hpp"/>
+            <FILE id="RPQ1uy" name="descriptor_read_op.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/descriptor_read_op.hpp"/>
+            <FILE id="GYucQl" name="descriptor_write_op.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/descriptor_write_op.hpp"/>
+            <FILE id="TEvbmf" name="dev_poll_reactor.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/dev_poll_reactor.hpp"/>
+            <FILE id="r5Pzzx" name="epoll_reactor.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/epoll_reactor.hpp"/>
+            <FILE id="YuwDli" name="event.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/detail/event.hpp"/>
+            <FILE id="CIDW4b" name="eventfd_select_interrupter.hpp" compile="0"
+                  resource="0" file="third_party/asio/asio/include/asio/detail/eventfd_select_interrupter.hpp"/>
+            <FILE id="bMjvG3" name="exception.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/detail/exception.hpp"/>
+            <FILE id="sh6EY8" name="executor_function.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/executor_function.hpp"/>
+            <FILE id="ANvBfs" name="executor_op.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/detail/executor_op.hpp"/>
+            <FILE id="W1PTnj" name="fd_set_adapter.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/fd_set_adapter.hpp"/>
+            <FILE id="XVN4d8" name="fenced_block.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/fenced_block.hpp"/>
+            <FILE id="MseaVn" name="functional.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/detail/functional.hpp"/>
+            <FILE id="extYuj" name="future.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/detail/future.hpp"/>
+            <FILE id="GTtP8h" name="gcc_arm_fenced_block.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/gcc_arm_fenced_block.hpp"/>
+            <FILE id="A13DKi" name="gcc_hppa_fenced_block.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/gcc_hppa_fenced_block.hpp"/>
+            <FILE id="TcBhTC" name="gcc_sync_fenced_block.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/gcc_sync_fenced_block.hpp"/>
+            <FILE id="VsEOto" name="gcc_x86_fenced_block.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/gcc_x86_fenced_block.hpp"/>
+            <FILE id="RhNnrI" name="global.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/detail/global.hpp"/>
+            <FILE id="MDAyLP" name="handler_alloc_helpers.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/handler_alloc_helpers.hpp"/>
+            <FILE id="G00RUa" name="handler_cont_helpers.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/handler_cont_helpers.hpp"/>
+            <FILE id="iaf0aW" name="handler_invoke_helpers.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/handler_invoke_helpers.hpp"/>
+            <FILE id="SQ9MEn" name="handler_tracking.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/handler_tracking.hpp"/>
+            <FILE id="sWCcOO" name="handler_type_requirements.hpp" compile="0"
+                  resource="0" file="third_party/asio/asio/include/asio/detail/handler_type_requirements.hpp"/>
+            <FILE id="HZTfMR" name="handler_work.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/handler_work.hpp"/>
+            <FILE id="I5o6Z8" name="hash_map.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/detail/hash_map.hpp"/>
+            <FILE id="Ts6lQg" name="io_control.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/detail/io_control.hpp"/>
+            <FILE id="jlE52n" name="io_object_impl.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/io_object_impl.hpp"/>
+            <FILE id="uklCjv" name="io_uring_descriptor_read_at_op.hpp" compile="0"
+                  resource="0" file="third_party/asio/asio/include/asio/detail/io_uring_descriptor_read_at_op.hpp"/>
+            <FILE id="WAKfYv" name="io_uring_descriptor_read_op.hpp" compile="0"
+                  resource="0" file="third_party/asio/asio/include/asio/detail/io_uring_descriptor_read_op.hpp"/>
+            <FILE id="rMqpxq" name="io_uring_descriptor_service.hpp" compile="0"
+                  resource="0" file="third_party/asio/asio/include/asio/detail/io_uring_descriptor_service.hpp"/>
+            <FILE id="rAV5o4" name="io_uring_descriptor_write_at_op.hpp" compile="0"
+                  resource="0" file="third_party/asio/asio/include/asio/detail/io_uring_descriptor_write_at_op.hpp"/>
+            <FILE id="m3WMHc" name="io_uring_descriptor_write_op.hpp" compile="0"
+                  resource="0" file="third_party/asio/asio/include/asio/detail/io_uring_descriptor_write_op.hpp"/>
+            <FILE id="aGjt0F" name="io_uring_file_service.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/io_uring_file_service.hpp"/>
+            <FILE id="A4007y" name="io_uring_null_buffers_op.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/io_uring_null_buffers_op.hpp"/>
+            <FILE id="tMotT0" name="io_uring_operation.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/io_uring_operation.hpp"/>
+            <FILE id="uwtSpx" name="io_uring_service.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/io_uring_service.hpp"/>
+            <FILE id="Y5iQ2g" name="io_uring_socket_accept_op.hpp" compile="0"
+                  resource="0" file="third_party/asio/asio/include/asio/detail/io_uring_socket_accept_op.hpp"/>
+            <FILE id="fE3zOE" name="io_uring_socket_connect_op.hpp" compile="0"
+                  resource="0" file="third_party/asio/asio/include/asio/detail/io_uring_socket_connect_op.hpp"/>
+            <FILE id="REDU1k" name="io_uring_socket_recv_op.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/io_uring_socket_recv_op.hpp"/>
+            <FILE id="CeMivV" name="io_uring_socket_recvfrom_op.hpp" compile="0"
+                  resource="0" file="third_party/asio/asio/include/asio/detail/io_uring_socket_recvfrom_op.hpp"/>
+            <FILE id="LZd1kP" name="io_uring_socket_recvmsg_op.hpp" compile="0"
+                  resource="0" file="third_party/asio/asio/include/asio/detail/io_uring_socket_recvmsg_op.hpp"/>
+            <FILE id="gjfYan" name="io_uring_socket_send_op.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/io_uring_socket_send_op.hpp"/>
+            <FILE id="OYCFMX" name="io_uring_socket_sendto_op.hpp" compile="0"
+                  resource="0" file="third_party/asio/asio/include/asio/detail/io_uring_socket_sendto_op.hpp"/>
+            <FILE id="jQjSHG" name="io_uring_socket_service.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/io_uring_socket_service.hpp"/>
+            <FILE id="TicQr3" name="io_uring_socket_service_base.hpp" compile="0"
+                  resource="0" file="third_party/asio/asio/include/asio/detail/io_uring_socket_service_base.hpp"/>
+            <FILE id="pFWxcw" name="io_uring_wait_op.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/io_uring_wait_op.hpp"/>
+            <FILE id="SkMhKR" name="is_buffer_sequence.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/is_buffer_sequence.hpp"/>
+            <FILE id="ssi7My" name="is_executor.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/detail/is_executor.hpp"/>
+            <FILE id="BDyxOC" name="keyword_tss_ptr.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/keyword_tss_ptr.hpp"/>
+            <FILE id="ev49a3" name="kqueue_reactor.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/kqueue_reactor.hpp"/>
+            <FILE id="Bja1x2" name="limits.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/detail/limits.hpp"/>
+            <FILE id="Mzzznp" name="local_free_on_block_exit.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/local_free_on_block_exit.hpp"/>
+            <FILE id="SX2gsV" name="macos_fenced_block.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/macos_fenced_block.hpp"/>
+            <FILE id="A1sLPu" name="memory.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/detail/memory.hpp"/>
+            <FILE id="mW6iNT" name="mutex.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/detail/mutex.hpp"/>
+            <FILE id="QPRFOe" name="non_const_lvalue.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/non_const_lvalue.hpp"/>
+            <FILE id="fi2ty6" name="noncopyable.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/detail/noncopyable.hpp"/>
+            <FILE id="rCag1u" name="null_event.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/detail/null_event.hpp"/>
+            <FILE id="NgvCMk" name="null_fenced_block.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/null_fenced_block.hpp"/>
+            <FILE id="o51UwO" name="null_global.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/detail/null_global.hpp"/>
+            <FILE id="zp3dZe" name="null_mutex.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/detail/null_mutex.hpp"/>
+            <FILE id="q7DCH4" name="null_reactor.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/null_reactor.hpp"/>
+            <FILE id="ATo2Sn" name="null_signal_blocker.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/null_signal_blocker.hpp"/>
+            <FILE id="riZGt0" name="null_socket_service.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/null_socket_service.hpp"/>
+            <FILE id="AAP27X" name="null_static_mutex.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/null_static_mutex.hpp"/>
+            <FILE id="P4WXT4" name="null_thread.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/detail/null_thread.hpp"/>
+            <FILE id="flX4Dm" name="null_tss_ptr.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/null_tss_ptr.hpp"/>
+            <FILE id="aas5TW" name="object_pool.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/detail/object_pool.hpp"/>
+            <FILE id="ORVItt" name="old_win_sdk_compat.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/old_win_sdk_compat.hpp"/>
+            <FILE id="FiiCT0" name="op_queue.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/detail/op_queue.hpp"/>
+            <FILE id="T6BsQS" name="operation.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/detail/operation.hpp"/>
+            <FILE id="yQo2yg" name="pipe_select_interrupter.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/pipe_select_interrupter.hpp"/>
+            <FILE id="NqEbUs" name="pop_options.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/detail/pop_options.hpp"/>
+            <FILE id="eOZk5A" name="posix_event.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/detail/posix_event.hpp"/>
+            <FILE id="SEC650" name="posix_fd_set_adapter.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/posix_fd_set_adapter.hpp"/>
+            <FILE id="D2A9UK" name="posix_global.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/posix_global.hpp"/>
+            <FILE id="wP8BN5" name="posix_mutex.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/detail/posix_mutex.hpp"/>
+            <FILE id="IAwoKg" name="posix_serial_port_service.hpp" compile="0"
+                  resource="0" file="third_party/asio/asio/include/asio/detail/posix_serial_port_service.hpp"/>
+            <FILE id="LJPmN4" name="posix_signal_blocker.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/posix_signal_blocker.hpp"/>
+            <FILE id="LuMaaF" name="posix_static_mutex.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/posix_static_mutex.hpp"/>
+            <FILE id="auAgHl" name="posix_thread.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/posix_thread.hpp"/>
+            <FILE id="dVaerK" name="posix_tss_ptr.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/posix_tss_ptr.hpp"/>
+            <FILE id="kgwXzb" name="push_options.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/push_options.hpp"/>
+            <FILE id="rmdZsq" name="reactive_descriptor_service.hpp" compile="0"
+                  resource="0" file="third_party/asio/asio/include/asio/detail/reactive_descriptor_service.hpp"/>
+            <FILE id="rWNYM0" name="reactive_null_buffers_op.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/reactive_null_buffers_op.hpp"/>
+            <FILE id="I8MAPG" name="reactive_socket_accept_op.hpp" compile="0"
+                  resource="0" file="third_party/asio/asio/include/asio/detail/reactive_socket_accept_op.hpp"/>
+            <FILE id="LLsPnI" name="reactive_socket_connect_op.hpp" compile="0"
+                  resource="0" file="third_party/asio/asio/include/asio/detail/reactive_socket_connect_op.hpp"/>
+            <FILE id="d4v8m1" name="reactive_socket_recv_op.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/reactive_socket_recv_op.hpp"/>
+            <FILE id="hgsBEr" name="reactive_socket_recvfrom_op.hpp" compile="0"
+                  resource="0" file="third_party/asio/asio/include/asio/detail/reactive_socket_recvfrom_op.hpp"/>
+            <FILE id="SPrOJc" name="reactive_socket_recvmsg_op.hpp" compile="0"
+                  resource="0" file="third_party/asio/asio/include/asio/detail/reactive_socket_recvmsg_op.hpp"/>
+            <FILE id="cNmcKu" name="reactive_socket_send_op.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/reactive_socket_send_op.hpp"/>
+            <FILE id="gHvsEX" name="reactive_socket_sendto_op.hpp" compile="0"
+                  resource="0" file="third_party/asio/asio/include/asio/detail/reactive_socket_sendto_op.hpp"/>
+            <FILE id="GlMy9d" name="reactive_socket_service.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/reactive_socket_service.hpp"/>
+            <FILE id="XjzfyH" name="reactive_socket_service_base.hpp" compile="0"
+                  resource="0" file="third_party/asio/asio/include/asio/detail/reactive_socket_service_base.hpp"/>
+            <FILE id="LeYpup" name="reactive_wait_op.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/reactive_wait_op.hpp"/>
+            <FILE id="eeR3Ap" name="reactor.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/detail/reactor.hpp"/>
+            <FILE id="dMliMu" name="reactor_op.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/detail/reactor_op.hpp"/>
+            <FILE id="QeMHq7" name="reactor_op_queue.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/reactor_op_queue.hpp"/>
+            <FILE id="i0VfAO" name="recycling_allocator.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/recycling_allocator.hpp"/>
+            <FILE id="wGEj6q" name="regex_fwd.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/detail/regex_fwd.hpp"/>
+            <FILE id="LH9Us8" name="resolve_endpoint_op.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/resolve_endpoint_op.hpp"/>
+            <FILE id="K2v7wz" name="resolve_op.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/detail/resolve_op.hpp"/>
+            <FILE id="uA8HpD" name="resolve_query_op.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/resolve_query_op.hpp"/>
+            <FILE id="ZvfaCo" name="resolver_service.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/resolver_service.hpp"/>
+            <FILE id="zY2MYp" name="resolver_service_base.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/resolver_service_base.hpp"/>
+            <FILE id="ohVOxN" name="scheduler.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/detail/scheduler.hpp"/>
+            <FILE id="FxhZjj" name="scheduler_operation.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/scheduler_operation.hpp"/>
+            <FILE id="OiCV8L" name="scheduler_task.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/scheduler_task.hpp"/>
+            <FILE id="ounxak" name="scheduler_thread_info.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/scheduler_thread_info.hpp"/>
+            <FILE id="Fj6zyv" name="scoped_lock.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/detail/scoped_lock.hpp"/>
+            <FILE id="d1CgzJ" name="scoped_ptr.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/detail/scoped_ptr.hpp"/>
+            <FILE id="czbaEW" name="select_interrupter.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/select_interrupter.hpp"/>
+            <FILE id="I5XjpO" name="select_reactor.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/select_reactor.hpp"/>
+            <FILE id="LcsdiX" name="service_registry.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/service_registry.hpp"/>
+            <FILE id="M1FGCF" name="signal_blocker.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/signal_blocker.hpp"/>
+            <FILE id="YtttbV" name="signal_handler.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/signal_handler.hpp"/>
+            <FILE id="iqs81k" name="signal_init.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/detail/signal_init.hpp"/>
+            <FILE id="GoGeM5" name="signal_op.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/detail/signal_op.hpp"/>
+            <FILE id="i8P0MA" name="signal_set_service.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/signal_set_service.hpp"/>
+            <FILE id="vws9oA" name="socket_holder.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/socket_holder.hpp"/>
+            <FILE id="oJYNyU" name="socket_ops.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/detail/socket_ops.hpp"/>
+            <FILE id="jZYjl2" name="socket_option.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/socket_option.hpp"/>
+            <FILE id="rxgDCV" name="socket_select_interrupter.hpp" compile="0"
+                  resource="0" file="third_party/asio/asio/include/asio/detail/socket_select_interrupter.hpp"/>
+            <FILE id="qTSeXB" name="socket_types.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/socket_types.hpp"/>
+            <FILE id="WZm8zu" name="solaris_fenced_block.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/solaris_fenced_block.hpp"/>
+            <FILE id="L9lChw" name="source_location.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/source_location.hpp"/>
+            <FILE id="eSDxTc" name="static_mutex.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/static_mutex.hpp"/>
+            <FILE id="tVFUhk" name="std_event.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/detail/std_event.hpp"/>
+            <FILE id="sFlUgK" name="std_fenced_block.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/std_fenced_block.hpp"/>
+            <FILE id="ho9gXj" name="std_global.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/detail/std_global.hpp"/>
+            <FILE id="p1d6tB" name="std_mutex.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/detail/std_mutex.hpp"/>
+            <FILE id="zv04bH" name="std_static_mutex.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/std_static_mutex.hpp"/>
+            <FILE id="AsluRu" name="std_thread.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/detail/std_thread.hpp"/>
+            <FILE id="djBl7e" name="strand_executor_service.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/strand_executor_service.hpp"/>
+            <FILE id="QxGAjy" name="strand_service.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/strand_service.hpp"/>
+            <FILE id="dGUPN1" name="string_view.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/detail/string_view.hpp"/>
+            <FILE id="jG5RD7" name="thread.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/detail/thread.hpp"/>
+            <FILE id="YOckhK" name="thread_context.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/thread_context.hpp"/>
+            <FILE id="IY4SGZ" name="thread_group.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/thread_group.hpp"/>
+            <FILE id="agdY5H" name="thread_info_base.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/thread_info_base.hpp"/>
+            <FILE id="arO14t" name="throw_error.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/detail/throw_error.hpp"/>
+            <FILE id="b69LNz" name="throw_exception.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/throw_exception.hpp"/>
+            <FILE id="OaH4rt" name="timer_queue.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/detail/timer_queue.hpp"/>
+            <FILE id="K821MK" name="timer_queue_base.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/timer_queue_base.hpp"/>
+            <FILE id="OpeZpZ" name="timer_queue_ptime.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/timer_queue_ptime.hpp"/>
+            <FILE id="Y2EZGm" name="timer_queue_set.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/timer_queue_set.hpp"/>
+            <FILE id="YMsPrl" name="timer_scheduler.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/timer_scheduler.hpp"/>
+            <FILE id="kq0hSd" name="timer_scheduler_fwd.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/timer_scheduler_fwd.hpp"/>
+            <FILE id="dG1j1J" name="tss_ptr.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/detail/tss_ptr.hpp"/>
+            <FILE id="OmoBjQ" name="type_traits.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/detail/type_traits.hpp"/>
+            <FILE id="JJWwic" name="utility.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/detail/utility.hpp"/>
+            <FILE id="nySvf2" name="variadic_templates.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/variadic_templates.hpp"/>
+            <FILE id="ftkzbb" name="wait_handler.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/wait_handler.hpp"/>
+            <FILE id="LCQDDH" name="wait_op.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/detail/wait_op.hpp"/>
+            <FILE id="nfG0yV" name="win_event.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/detail/win_event.hpp"/>
+            <FILE id="onEELG" name="win_fd_set_adapter.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/win_fd_set_adapter.hpp"/>
+            <FILE id="kO7sCX" name="win_fenced_block.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/win_fenced_block.hpp"/>
+            <FILE id="qBNwwe" name="win_global.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/detail/win_global.hpp"/>
+            <FILE id="gS40s7" name="win_iocp_file_service.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/win_iocp_file_service.hpp"/>
+            <FILE id="FjWiR7" name="win_iocp_handle_read_op.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/win_iocp_handle_read_op.hpp"/>
+            <FILE id="eZvjXn" name="win_iocp_handle_service.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/win_iocp_handle_service.hpp"/>
+            <FILE id="MpwjMa" name="win_iocp_handle_write_op.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/win_iocp_handle_write_op.hpp"/>
+            <FILE id="xB3HgV" name="win_iocp_io_context.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/win_iocp_io_context.hpp"/>
+            <FILE id="PTCLUK" name="win_iocp_null_buffers_op.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/win_iocp_null_buffers_op.hpp"/>
+            <FILE id="uxi0r4" name="win_iocp_operation.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/win_iocp_operation.hpp"/>
+            <FILE id="C961pV" name="win_iocp_overlapped_op.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/win_iocp_overlapped_op.hpp"/>
+            <FILE id="Aw1xAw" name="win_iocp_overlapped_ptr.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/win_iocp_overlapped_ptr.hpp"/>
+            <FILE id="r9c2LX" name="win_iocp_serial_port_service.hpp" compile="0"
+                  resource="0" file="third_party/asio/asio/include/asio/detail/win_iocp_serial_port_service.hpp"/>
+            <FILE id="gpQrdp" name="win_iocp_socket_accept_op.hpp" compile="0"
+                  resource="0" file="third_party/asio/asio/include/asio/detail/win_iocp_socket_accept_op.hpp"/>
+            <FILE id="cfHK0V" name="win_iocp_socket_connect_op.hpp" compile="0"
+                  resource="0" file="third_party/asio/asio/include/asio/detail/win_iocp_socket_connect_op.hpp"/>
+            <FILE id="NGj3cV" name="win_iocp_socket_recv_op.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/win_iocp_socket_recv_op.hpp"/>
+            <FILE id="miZuAc" name="win_iocp_socket_recvfrom_op.hpp" compile="0"
+                  resource="0" file="third_party/asio/asio/include/asio/detail/win_iocp_socket_recvfrom_op.hpp"/>
+            <FILE id="zr1e0q" name="win_iocp_socket_recvmsg_op.hpp" compile="0"
+                  resource="0" file="third_party/asio/asio/include/asio/detail/win_iocp_socket_recvmsg_op.hpp"/>
+            <FILE id="XwwNj1" name="win_iocp_socket_send_op.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/win_iocp_socket_send_op.hpp"/>
+            <FILE id="drW7dz" name="win_iocp_socket_service.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/win_iocp_socket_service.hpp"/>
+            <FILE id="MV13Au" name="win_iocp_socket_service_base.hpp" compile="0"
+                  resource="0" file="third_party/asio/asio/include/asio/detail/win_iocp_socket_service_base.hpp"/>
+            <FILE id="krhyEf" name="win_iocp_thread_info.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/win_iocp_thread_info.hpp"/>
+            <FILE id="YEU7Dq" name="win_iocp_wait_op.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/win_iocp_wait_op.hpp"/>
+            <FILE id="iJpSbT" name="win_mutex.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/detail/win_mutex.hpp"/>
+            <FILE id="wRtsal" name="win_object_handle_service.hpp" compile="0"
+                  resource="0" file="third_party/asio/asio/include/asio/detail/win_object_handle_service.hpp"/>
+            <FILE id="B7asWh" name="win_static_mutex.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/win_static_mutex.hpp"/>
+            <FILE id="RkfWjj" name="win_thread.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/detail/win_thread.hpp"/>
+            <FILE id="UtHTb2" name="win_tss_ptr.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/detail/win_tss_ptr.hpp"/>
+            <FILE id="lcrgEI" name="winapp_thread.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/winapp_thread.hpp"/>
+            <FILE id="ELLPkL" name="wince_thread.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/wince_thread.hpp"/>
+            <FILE id="kS0l1e" name="winrt_async_manager.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/winrt_async_manager.hpp"/>
+            <FILE id="XqcNHQ" name="winrt_async_op.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/winrt_async_op.hpp"/>
+            <FILE id="v0lPlt" name="winrt_resolve_op.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/winrt_resolve_op.hpp"/>
+            <FILE id="pPCZDL" name="winrt_resolver_service.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/winrt_resolver_service.hpp"/>
+            <FILE id="lykvLh" name="winrt_socket_connect_op.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/winrt_socket_connect_op.hpp"/>
+            <FILE id="hBOGVG" name="winrt_socket_recv_op.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/winrt_socket_recv_op.hpp"/>
+            <FILE id="ZSGNdO" name="winrt_socket_send_op.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/winrt_socket_send_op.hpp"/>
+            <FILE id="uvHSud" name="winrt_ssocket_service.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/winrt_ssocket_service.hpp"/>
+            <FILE id="vbyM29" name="winrt_ssocket_service_base.hpp" compile="0"
+                  resource="0" file="third_party/asio/asio/include/asio/detail/winrt_ssocket_service_base.hpp"/>
+            <FILE id="edVWPq" name="winrt_timer_scheduler.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/winrt_timer_scheduler.hpp"/>
+            <FILE id="iKnEga" name="winrt_utils.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/detail/winrt_utils.hpp"/>
+            <FILE id="iBPnCg" name="winsock_init.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/winsock_init.hpp"/>
+            <FILE id="kYhiiV" name="work_dispatcher.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/work_dispatcher.hpp"/>
+            <FILE id="bbqJFT" name="wrapped_handler.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/detail/wrapped_handler.hpp"/>
+          </GROUP>
+          <GROUP id="{49512CAC-E98D-FADC-14F7-DE000A0B4051}" name="execution">
+            <GROUP id="{FB83E8B8-34A6-D507-A12B-E63B9E25CC85}" name="detail">
+              <FILE id="qwNLSL" name="as_invocable.hpp" compile="0" resource="0"
+                    file="third_party/asio/asio/include/asio/execution/detail/as_invocable.hpp"/>
+              <FILE id="aupYCV" name="as_operation.hpp" compile="0" resource="0"
+                    file="third_party/asio/asio/include/asio/execution/detail/as_operation.hpp"/>
+              <FILE id="U189LO" name="as_receiver.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/execution/detail/as_receiver.hpp"/>
+              <FILE id="WSFZEv" name="bulk_sender.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/execution/detail/bulk_sender.hpp"/>
+              <FILE id="GMsHbk" name="submit_receiver.hpp" compile="0" resource="0"
+                    file="third_party/asio/asio/include/asio/execution/detail/submit_receiver.hpp"/>
+              <FILE id="lcOSIW" name="void_receiver.hpp" compile="0" resource="0"
+                    file="third_party/asio/asio/include/asio/execution/detail/void_receiver.hpp"/>
+            </GROUP>
+            <GROUP id="{9B9171E3-62E0-941F-7674-AEC5F6F47435}" name="impl">
+              <FILE id="QkEAkO" name="bad_executor.ipp" compile="0" resource="1"
+                    file="third_party/asio/asio/include/asio/execution/impl/bad_executor.ipp"/>
+              <FILE id="MK49Nb" name="receiver_invocation_error.ipp" compile="0"
+                    resource="1" file="third_party/asio/asio/include/asio/execution/impl/receiver_invocation_error.ipp"/>
+            </GROUP>
+            <FILE id="RPiDOu" name="allocator.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/execution/allocator.hpp"/>
+            <FILE id="dGwSb9" name="any_executor.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/execution/any_executor.hpp"/>
+            <FILE id="W49aTK" name="bad_executor.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/execution/bad_executor.hpp"/>
+            <FILE id="DGIjBW" name="blocking.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/execution/blocking.hpp"/>
+            <FILE id="l87Wvx" name="blocking_adaptation.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/execution/blocking_adaptation.hpp"/>
+            <FILE id="T4lfq6" name="bulk_execute.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/execution/bulk_execute.hpp"/>
+            <FILE id="Fi4e4d" name="bulk_guarantee.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/execution/bulk_guarantee.hpp"/>
+            <FILE id="a1wTLJ" name="connect.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/execution/connect.hpp"/>
+            <FILE id="CS0Sa9" name="context.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/execution/context.hpp"/>
+            <FILE id="O9xzQu" name="context_as.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/execution/context_as.hpp"/>
+            <FILE id="klYBaj" name="execute.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/execution/execute.hpp"/>
+            <FILE id="kNsQM8" name="executor.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/execution/executor.hpp"/>
+            <FILE id="u1oJkR" name="invocable_archetype.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/execution/invocable_archetype.hpp"/>
+            <FILE id="nYMOyd" name="mapping.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/execution/mapping.hpp"/>
+            <FILE id="RZtDej" name="occupancy.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/execution/occupancy.hpp"/>
+            <FILE id="yquWCz" name="operation_state.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/execution/operation_state.hpp"/>
+            <FILE id="pIL9hW" name="outstanding_work.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/execution/outstanding_work.hpp"/>
+            <FILE id="uRkvsm" name="prefer_only.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/execution/prefer_only.hpp"/>
+            <FILE id="eXn4oc" name="receiver.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/execution/receiver.hpp"/>
+            <FILE id="tUYuO1" name="receiver_invocation_error.hpp" compile="0"
+                  resource="0" file="third_party/asio/asio/include/asio/execution/receiver_invocation_error.hpp"/>
+            <FILE id="HhAEnr" name="relationship.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/execution/relationship.hpp"/>
+            <FILE id="IwEXzB" name="schedule.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/execution/schedule.hpp"/>
+            <FILE id="BeFcp7" name="scheduler.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/execution/scheduler.hpp"/>
+            <FILE id="wrQz5i" name="sender.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/execution/sender.hpp"/>
+            <FILE id="t1RFX1" name="set_done.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/execution/set_done.hpp"/>
+            <FILE id="XoYGOb" name="set_error.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/execution/set_error.hpp"/>
+            <FILE id="DpVVzG" name="set_value.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/execution/set_value.hpp"/>
+            <FILE id="xHhUgH" name="start.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/execution/start.hpp"/>
+            <FILE id="bGKiuB" name="submit.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/execution/submit.hpp"/>
+          </GROUP>
+          <GROUP id="{2EB103AB-8294-FC80-96E9-5D56316DF329}" name="experimental">
+            <GROUP id="{6C9427D5-71AE-1BB0-5697-7852A357672B}" name="detail">
+              <GROUP id="{CC4C361B-B93A-4C4D-8992-2490A09FA012}" name="impl">
+                <FILE id="IJI9iV" name="channel_service.hpp" compile="0" resource="0"
+                      file="third_party/asio/asio/include/asio/experimental/detail/impl/channel_service.hpp"/>
+              </GROUP>
+              <FILE id="Jp1yGE" name="channel_handler.hpp" compile="0" resource="0"
+                    file="third_party/asio/asio/include/asio/experimental/detail/channel_handler.hpp"/>
+              <FILE id="o32xGW" name="channel_message.hpp" compile="0" resource="0"
+                    file="third_party/asio/asio/include/asio/experimental/detail/channel_message.hpp"/>
+              <FILE id="F2eCa9" name="channel_operation.hpp" compile="0" resource="0"
+                    file="third_party/asio/asio/include/asio/experimental/detail/channel_operation.hpp"/>
+              <FILE id="kCkyAc" name="channel_payload.hpp" compile="0" resource="0"
+                    file="third_party/asio/asio/include/asio/experimental/detail/channel_payload.hpp"/>
+              <FILE id="qV22CJ" name="channel_receive_op.hpp" compile="0" resource="0"
+                    file="third_party/asio/asio/include/asio/experimental/detail/channel_receive_op.hpp"/>
+              <FILE id="SbWG4i" name="channel_send_functions.hpp" compile="0" resource="0"
+                    file="third_party/asio/asio/include/asio/experimental/detail/channel_send_functions.hpp"/>
+              <FILE id="XalkV2" name="channel_send_op.hpp" compile="0" resource="0"
+                    file="third_party/asio/asio/include/asio/experimental/detail/channel_send_op.hpp"/>
+              <FILE id="DpgUAg" name="channel_service.hpp" compile="0" resource="0"
+                    file="third_party/asio/asio/include/asio/experimental/detail/channel_service.hpp"/>
+              <FILE id="NwFhcN" name="completion_handler_erasure.hpp" compile="0"
+                    resource="0" file="third_party/asio/asio/include/asio/experimental/detail/completion_handler_erasure.hpp"/>
+              <FILE id="Fbj5ew" name="coro_promise_allocator.hpp" compile="0" resource="0"
+                    file="third_party/asio/asio/include/asio/experimental/detail/coro_promise_allocator.hpp"/>
+              <FILE id="Vrkjgj" name="has_signature.hpp" compile="0" resource="0"
+                    file="third_party/asio/asio/include/asio/experimental/detail/has_signature.hpp"/>
+              <FILE id="dDK6gc" name="partial_promise.hpp" compile="0" resource="0"
+                    file="third_party/asio/asio/include/asio/experimental/detail/partial_promise.hpp"/>
+            </GROUP>
+            <GROUP id="{0EE59BF5-4CDD-9594-163C-35361F089620}" name="impl">
+              <FILE id="NI7OBk" name="as_single.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/experimental/impl/as_single.hpp"/>
+              <FILE id="DlBTlO" name="channel_error.ipp" compile="0" resource="1"
+                    file="third_party/asio/asio/include/asio/experimental/impl/channel_error.ipp"/>
+              <FILE id="SMjJhq" name="coro.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/experimental/impl/coro.hpp"/>
+              <FILE id="JEA0eI" name="parallel_group.hpp" compile="0" resource="0"
+                    file="third_party/asio/asio/include/asio/experimental/impl/parallel_group.hpp"/>
+              <FILE id="neIeZ8" name="promise.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/experimental/impl/promise.hpp"/>
+              <FILE id="XUSdrb" name="use_coro.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/experimental/impl/use_coro.hpp"/>
+            </GROUP>
+            <FILE id="eMYxoC" name="append.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/experimental/append.hpp"/>
+            <FILE id="iSq86A" name="as_single.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/experimental/as_single.hpp"/>
+            <FILE id="OecAQl" name="as_tuple.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/experimental/as_tuple.hpp"/>
+            <FILE id="QviOX7" name="awaitable_operators.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/experimental/awaitable_operators.hpp"/>
+            <FILE id="KBVgCP" name="basic_channel.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/experimental/basic_channel.hpp"/>
+            <FILE id="lyYFma" name="basic_concurrent_channel.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/experimental/basic_concurrent_channel.hpp"/>
+            <FILE id="YmbDxp" name="cancellation_condition.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/experimental/cancellation_condition.hpp"/>
+            <FILE id="atSkZD" name="channel.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/experimental/channel.hpp"/>
+            <FILE id="ep2aUi" name="channel_error.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/experimental/channel_error.hpp"/>
+            <FILE id="YRv1tI" name="channel_traits.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/experimental/channel_traits.hpp"/>
+            <FILE id="xx4ZkL" name="co_spawn.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/experimental/co_spawn.hpp"/>
+            <FILE id="vbfsua" name="concurrent_channel.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/experimental/concurrent_channel.hpp"/>
+            <FILE id="B60iJs" name="coro.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/experimental/coro.hpp"/>
+            <FILE id="uwfFNp" name="coro_traits.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/experimental/coro_traits.hpp"/>
+            <FILE id="uBmIoY" name="deferred.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/experimental/deferred.hpp"/>
+            <FILE id="wDiajF" name="parallel_group.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/experimental/parallel_group.hpp"/>
+            <FILE id="stsVoL" name="prepend.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/experimental/prepend.hpp"/>
+            <FILE id="pfABKQ" name="promise.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/experimental/promise.hpp"/>
+            <FILE id="MdSJkN" name="use_coro.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/experimental/use_coro.hpp"/>
+          </GROUP>
+          <GROUP id="{00E0A1FB-B601-44C6-3E7C-7AE80FBFC6BC}" name="generic">
+            <GROUP id="{25EDE77D-C1BA-C4FF-A9DC-0CAAC9753D77}" name="detail">
+              <GROUP id="{2AA6C66C-8445-F076-84CE-0868098B27F5}" name="impl">
+                <FILE id="VNplZZ" name="endpoint.ipp" compile="0" resource="1" file="third_party/asio/asio/include/asio/generic/detail/impl/endpoint.ipp"/>
+              </GROUP>
+              <FILE id="TCDgWj" name="endpoint.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/generic/detail/endpoint.hpp"/>
+            </GROUP>
+            <FILE id="ecMfNp" name="basic_endpoint.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/generic/basic_endpoint.hpp"/>
+            <FILE id="WdD3Zg" name="datagram_protocol.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/generic/datagram_protocol.hpp"/>
+            <FILE id="Al8IvB" name="raw_protocol.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/generic/raw_protocol.hpp"/>
+            <FILE id="KDDV5P" name="seq_packet_protocol.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/generic/seq_packet_protocol.hpp"/>
+            <FILE id="jXfbm2" name="stream_protocol.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/generic/stream_protocol.hpp"/>
+          </GROUP>
+          <GROUP id="{C92E63F7-EE8F-B873-EAA1-368B72A398DB}" name="impl">
+            <FILE id="dSuafp" name="any_io_executor.ipp" compile="0" resource="1"
+                  file="third_party/asio/asio/include/asio/impl/any_io_executor.ipp"/>
+            <FILE id="m0cqCp" name="append.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/impl/append.hpp"/>
+            <FILE id="lV9MV8" name="as_tuple.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/impl/as_tuple.hpp"/>
+            <FILE id="CbqCVL" name="awaitable.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/impl/awaitable.hpp"/>
+            <FILE id="nEwCNG" name="buffered_read_stream.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/impl/buffered_read_stream.hpp"/>
+            <FILE id="KcVguC" name="buffered_write_stream.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/impl/buffered_write_stream.hpp"/>
+            <FILE id="H4yDxC" name="cancellation_signal.ipp" compile="0" resource="1"
+                  file="third_party/asio/asio/include/asio/impl/cancellation_signal.ipp"/>
+            <FILE id="dtW4bS" name="co_spawn.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/impl/co_spawn.hpp"/>
+            <FILE id="PgblrA" name="connect.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/impl/connect.hpp"/>
+            <FILE id="k7Txa0" name="connect_pipe.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/impl/connect_pipe.hpp"/>
+            <FILE id="SHjPJN" name="connect_pipe.ipp" compile="0" resource="1"
+                  file="third_party/asio/asio/include/asio/impl/connect_pipe.ipp"/>
+            <FILE id="nm8Q1x" name="defer.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/impl/defer.hpp"/>
+            <FILE id="QbC8gA" name="deferred.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/impl/deferred.hpp"/>
+            <FILE id="Pmg2aE" name="detached.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/impl/detached.hpp"/>
+            <FILE id="iJZtlt" name="dispatch.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/impl/dispatch.hpp"/>
+            <FILE id="DOaBjD" name="error.ipp" compile="0" resource="1" file="third_party/asio/asio/include/asio/impl/error.ipp"/>
+            <FILE id="zALMiI" name="error_code.ipp" compile="0" resource="1" file="third_party/asio/asio/include/asio/impl/error_code.ipp"/>
+            <FILE id="F0RULN" name="execution_context.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/impl/execution_context.hpp"/>
+            <FILE id="gnkxm7" name="execution_context.ipp" compile="0" resource="1"
+                  file="third_party/asio/asio/include/asio/impl/execution_context.ipp"/>
+            <FILE id="Z6zz2V" name="executor.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/impl/executor.hpp"/>
+            <FILE id="gc7aO1" name="executor.ipp" compile="0" resource="1" file="third_party/asio/asio/include/asio/impl/executor.ipp"/>
+            <FILE id="uaQlb7" name="handler_alloc_hook.ipp" compile="0" resource="1"
+                  file="third_party/asio/asio/include/asio/impl/handler_alloc_hook.ipp"/>
+            <FILE id="Ta1e0h" name="io_context.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/impl/io_context.hpp"/>
+            <FILE id="kmNJua" name="io_context.ipp" compile="0" resource="1" file="third_party/asio/asio/include/asio/impl/io_context.ipp"/>
+            <FILE id="eReCBL" name="multiple_exceptions.ipp" compile="0" resource="1"
+                  file="third_party/asio/asio/include/asio/impl/multiple_exceptions.ipp"/>
+            <FILE id="FcxSEv" name="post.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/impl/post.hpp"/>
+            <FILE id="fOHAx9" name="prepend.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/impl/prepend.hpp"/>
+            <FILE id="q1V6Ae" name="read.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/impl/read.hpp"/>
+            <FILE id="KKebVw" name="read_at.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/impl/read_at.hpp"/>
+            <FILE id="T9lrmE" name="read_until.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/impl/read_until.hpp"/>
+            <FILE id="gbw6ed" name="redirect_error.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/impl/redirect_error.hpp"/>
+            <FILE id="gIAb09" name="serial_port_base.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/impl/serial_port_base.hpp"/>
+            <FILE id="qHefy5" name="serial_port_base.ipp" compile="0" resource="1"
+                  file="third_party/asio/asio/include/asio/impl/serial_port_base.ipp"/>
+            <FILE id="PzlU4C" name="spawn.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/impl/spawn.hpp"/>
+            <FILE id="gul9Wd" name="src.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/impl/src.hpp"/>
+            <FILE id="p65fVi" name="system_context.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/impl/system_context.hpp"/>
+            <FILE id="BsOSCs" name="system_context.ipp" compile="0" resource="1"
+                  file="third_party/asio/asio/include/asio/impl/system_context.ipp"/>
+            <FILE id="Vd7R3E" name="system_executor.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/impl/system_executor.hpp"/>
+            <FILE id="YCF7lM" name="thread_pool.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/impl/thread_pool.hpp"/>
+            <FILE id="a3PNB7" name="thread_pool.ipp" compile="0" resource="1" file="third_party/asio/asio/include/asio/impl/thread_pool.ipp"/>
+            <FILE id="f5UQ2P" name="use_awaitable.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/impl/use_awaitable.hpp"/>
+            <FILE id="GcnE6r" name="use_future.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/impl/use_future.hpp"/>
+            <FILE id="QBZHfd" name="write.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/impl/write.hpp"/>
+            <FILE id="Mdma3a" name="write_at.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/impl/write_at.hpp"/>
+          </GROUP>
+          <GROUP id="{C8BC32E3-C984-DDE7-DA04-281FA4D9766A}" name="ip">
+            <GROUP id="{939E48A8-DDC9-B1BE-4B33-A20FDA9F7C7A}" name="detail">
+              <GROUP id="{D97B1205-6191-F83B-523F-0ACCA604396D}" name="impl">
+                <FILE id="ExV15q" name="endpoint.ipp" compile="0" resource="1" file="third_party/asio/asio/include/asio/ip/detail/impl/endpoint.ipp"/>
+              </GROUP>
+              <FILE id="vxBETv" name="endpoint.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/ip/detail/endpoint.hpp"/>
+              <FILE id="YiQ1WM" name="socket_option.hpp" compile="0" resource="0"
+                    file="third_party/asio/asio/include/asio/ip/detail/socket_option.hpp"/>
+            </GROUP>
+            <GROUP id="{9B13166E-C625-5D70-BC0B-7D4A8F8B2253}" name="impl">
+              <FILE id="gjUxri" name="address.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/ip/impl/address.hpp"/>
+              <FILE id="EG2b94" name="address.ipp" compile="0" resource="1" file="third_party/asio/asio/include/asio/ip/impl/address.ipp"/>
+              <FILE id="JarcIT" name="address_v4.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/ip/impl/address_v4.hpp"/>
+              <FILE id="xFDj3Y" name="address_v4.ipp" compile="0" resource="1" file="third_party/asio/asio/include/asio/ip/impl/address_v4.ipp"/>
+              <FILE id="b4pxIb" name="address_v6.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/ip/impl/address_v6.hpp"/>
+              <FILE id="fsUWGn" name="address_v6.ipp" compile="0" resource="1" file="third_party/asio/asio/include/asio/ip/impl/address_v6.ipp"/>
+              <FILE id="xlm8Jl" name="basic_endpoint.hpp" compile="0" resource="0"
+                    file="third_party/asio/asio/include/asio/ip/impl/basic_endpoint.hpp"/>
+              <FILE id="ZOEXKm" name="host_name.ipp" compile="0" resource="1" file="third_party/asio/asio/include/asio/ip/impl/host_name.ipp"/>
+              <FILE id="pVEV5R" name="network_v4.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/ip/impl/network_v4.hpp"/>
+              <FILE id="MkaXUf" name="network_v4.ipp" compile="0" resource="1" file="third_party/asio/asio/include/asio/ip/impl/network_v4.ipp"/>
+              <FILE id="bFzycG" name="network_v6.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/ip/impl/network_v6.hpp"/>
+              <FILE id="QcAx3k" name="network_v6.ipp" compile="0" resource="1" file="third_party/asio/asio/include/asio/ip/impl/network_v6.ipp"/>
+            </GROUP>
+            <FILE id="cnqG74" name="address.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/ip/address.hpp"/>
+            <FILE id="kHe10Z" name="address_v4.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/ip/address_v4.hpp"/>
+            <FILE id="o8IVFm" name="address_v4_iterator.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/ip/address_v4_iterator.hpp"/>
+            <FILE id="OYhwDE" name="address_v4_range.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/ip/address_v4_range.hpp"/>
+            <FILE id="LPmvNL" name="address_v6.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/ip/address_v6.hpp"/>
+            <FILE id="II5gVi" name="address_v6_iterator.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/ip/address_v6_iterator.hpp"/>
+            <FILE id="Jrq9ld" name="address_v6_range.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/ip/address_v6_range.hpp"/>
+            <FILE id="zNcft2" name="bad_address_cast.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/ip/bad_address_cast.hpp"/>
+            <FILE id="n4PYWw" name="basic_endpoint.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/ip/basic_endpoint.hpp"/>
+            <FILE id="GHOmlw" name="basic_resolver.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/ip/basic_resolver.hpp"/>
+            <FILE id="CBC3J5" name="basic_resolver_entry.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/ip/basic_resolver_entry.hpp"/>
+            <FILE id="hBki1e" name="basic_resolver_iterator.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/ip/basic_resolver_iterator.hpp"/>
+            <FILE id="LK2R2X" name="basic_resolver_query.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/ip/basic_resolver_query.hpp"/>
+            <FILE id="rjiAJc" name="basic_resolver_results.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/ip/basic_resolver_results.hpp"/>
+            <FILE id="ZKF677" name="host_name.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/ip/host_name.hpp"/>
+            <FILE id="brMR9F" name="icmp.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/ip/icmp.hpp"/>
+            <FILE id="VQy5cV" name="multicast.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/ip/multicast.hpp"/>
+            <FILE id="OGPazT" name="network_v4.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/ip/network_v4.hpp"/>
+            <FILE id="p2ip6m" name="network_v6.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/ip/network_v6.hpp"/>
+            <FILE id="DjHCol" name="resolver_base.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/ip/resolver_base.hpp"/>
+            <FILE id="B5381B" name="resolver_query_base.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/ip/resolver_query_base.hpp"/>
+            <FILE id="fUUVbg" name="tcp.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/ip/tcp.hpp"/>
+            <FILE id="DSLD6j" name="udp.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/ip/udp.hpp"/>
+            <FILE id="jQ60GV" name="unicast.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/ip/unicast.hpp"/>
+            <FILE id="qtqF2T" name="v6_only.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/ip/v6_only.hpp"/>
+          </GROUP>
+          <GROUP id="{69287B6E-959A-F8CE-7B9D-B59A5F2537B6}" name="local">
+            <GROUP id="{05B391BB-757D-98B1-898B-039572ED0124}" name="detail">
+              <GROUP id="{E191E350-2CD1-EB7D-106D-E11B06741460}" name="impl">
+                <FILE id="u7tSwn" name="endpoint.ipp" compile="0" resource="1" file="third_party/asio/asio/include/asio/local/detail/impl/endpoint.ipp"/>
+              </GROUP>
+              <FILE id="YODCQR" name="endpoint.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/local/detail/endpoint.hpp"/>
+            </GROUP>
+            <FILE id="h0B08V" name="basic_endpoint.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/local/basic_endpoint.hpp"/>
+            <FILE id="EJovQR" name="connect_pair.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/local/connect_pair.hpp"/>
+            <FILE id="XhcWz1" name="datagram_protocol.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/local/datagram_protocol.hpp"/>
+            <FILE id="Bt5QJR" name="stream_protocol.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/local/stream_protocol.hpp"/>
+          </GROUP>
+          <GROUP id="{6A54EA3F-97E3-489C-5E6F-5DB7EE73F789}" name="posix">
+            <FILE id="Fqdip1" name="basic_descriptor.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/posix/basic_descriptor.hpp"/>
+            <FILE id="cc2uyv" name="basic_stream_descriptor.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/posix/basic_stream_descriptor.hpp"/>
+            <FILE id="w2cEwy" name="descriptor.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/posix/descriptor.hpp"/>
+            <FILE id="UZfDNC" name="descriptor_base.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/posix/descriptor_base.hpp"/>
+            <FILE id="t4arhq" name="stream_descriptor.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/posix/stream_descriptor.hpp"/>
+          </GROUP>
+          <GROUP id="{D56647B5-EB78-C795-F054-24495BF7FF1D}" name="ssl">
+            <GROUP id="{F01488EC-8EFF-9A9B-F440-461F367FE5D6}" name="detail">
+              <GROUP id="{B04C3EFF-876E-CDC7-0ED5-2E21D6BC13EE}" name="impl">
+                <FILE id="UBaDSQ" name="engine.ipp" compile="0" resource="1" file="third_party/asio/asio/include/asio/ssl/detail/impl/engine.ipp"/>
+                <FILE id="JbZMw8" name="openssl_init.ipp" compile="0" resource="1"
+                      file="third_party/asio/asio/include/asio/ssl/detail/impl/openssl_init.ipp"/>
+              </GROUP>
+              <FILE id="TBixnl" name="buffered_handshake_op.hpp" compile="0" resource="0"
+                    file="third_party/asio/asio/include/asio/ssl/detail/buffered_handshake_op.hpp"/>
+              <FILE id="wrn8by" name="engine.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/ssl/detail/engine.hpp"/>
+              <FILE id="s2C8cU" name="handshake_op.hpp" compile="0" resource="0"
+                    file="third_party/asio/asio/include/asio/ssl/detail/handshake_op.hpp"/>
+              <FILE id="QFk1qZ" name="io.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/ssl/detail/io.hpp"/>
+              <FILE id="Dl1YS6" name="openssl_init.hpp" compile="0" resource="0"
+                    file="third_party/asio/asio/include/asio/ssl/detail/openssl_init.hpp"/>
+              <FILE id="x17ndV" name="openssl_types.hpp" compile="0" resource="0"
+                    file="third_party/asio/asio/include/asio/ssl/detail/openssl_types.hpp"/>
+              <FILE id="eVc1O5" name="password_callback.hpp" compile="0" resource="0"
+                    file="third_party/asio/asio/include/asio/ssl/detail/password_callback.hpp"/>
+              <FILE id="oQw4sC" name="read_op.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/ssl/detail/read_op.hpp"/>
+              <FILE id="y1WKAy" name="shutdown_op.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/ssl/detail/shutdown_op.hpp"/>
+              <FILE id="W5TbMN" name="stream_core.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/ssl/detail/stream_core.hpp"/>
+              <FILE id="lbVSwt" name="verify_callback.hpp" compile="0" resource="0"
+                    file="third_party/asio/asio/include/asio/ssl/detail/verify_callback.hpp"/>
+              <FILE id="y4VjVR" name="write_op.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/ssl/detail/write_op.hpp"/>
+            </GROUP>
+            <GROUP id="{282E3333-82F5-9794-CAEA-690F00951062}" name="impl">
+              <FILE id="hbTMto" name="context.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/ssl/impl/context.hpp"/>
+              <FILE id="J2hu7r" name="context.ipp" compile="0" resource="1" file="third_party/asio/asio/include/asio/ssl/impl/context.ipp"/>
+              <FILE id="wgRUQl" name="error.ipp" compile="0" resource="1" file="third_party/asio/asio/include/asio/ssl/impl/error.ipp"/>
+              <FILE id="yrE8hy" name="host_name_verification.ipp" compile="0" resource="1"
+                    file="third_party/asio/asio/include/asio/ssl/impl/host_name_verification.ipp"/>
+              <FILE id="B6PCd5" name="rfc2818_verification.ipp" compile="0" resource="1"
+                    file="third_party/asio/asio/include/asio/ssl/impl/rfc2818_verification.ipp"/>
+              <FILE id="Lv1Iuh" name="src.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/ssl/impl/src.hpp"/>
+            </GROUP>
+            <FILE id="sxzHkb" name="context.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/ssl/context.hpp"/>
+            <FILE id="lsU9l5" name="context_base.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/ssl/context_base.hpp"/>
+            <FILE id="XlAjij" name="error.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/ssl/error.hpp"/>
+            <FILE id="aLVsEi" name="host_name_verification.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/ssl/host_name_verification.hpp"/>
+            <FILE id="B7GI6s" name="rfc2818_verification.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/ssl/rfc2818_verification.hpp"/>
+            <FILE id="Cizs98" name="stream.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/ssl/stream.hpp"/>
+            <FILE id="WjfkFM" name="stream_base.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/ssl/stream_base.hpp"/>
+            <FILE id="uX2sqv" name="verify_context.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/ssl/verify_context.hpp"/>
+            <FILE id="Hset9z" name="verify_mode.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/ssl/verify_mode.hpp"/>
+          </GROUP>
+          <GROUP id="{3FFE56AF-32E1-8C19-8F2B-F0AD7C996713}" name="traits">
+            <FILE id="evtA3y" name="bulk_execute_free.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/traits/bulk_execute_free.hpp"/>
+            <FILE id="p7BuNP" name="bulk_execute_member.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/traits/bulk_execute_member.hpp"/>
+            <FILE id="b3UmcA" name="connect_free.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/traits/connect_free.hpp"/>
+            <FILE id="UiwrIo" name="connect_member.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/traits/connect_member.hpp"/>
+            <FILE id="s3l1CG" name="equality_comparable.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/traits/equality_comparable.hpp"/>
+            <FILE id="d9efoK" name="execute_free.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/traits/execute_free.hpp"/>
+            <FILE id="FybBDL" name="execute_member.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/traits/execute_member.hpp"/>
+            <FILE id="l2Jzr1" name="prefer_free.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/traits/prefer_free.hpp"/>
+            <FILE id="rm3xBb" name="prefer_member.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/traits/prefer_member.hpp"/>
+            <FILE id="Mmitur" name="query_free.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/traits/query_free.hpp"/>
+            <FILE id="Wv9dzX" name="query_member.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/traits/query_member.hpp"/>
+            <FILE id="RcQS7s" name="query_static_constexpr_member.hpp" compile="0"
+                  resource="0" file="third_party/asio/asio/include/asio/traits/query_static_constexpr_member.hpp"/>
+            <FILE id="T8FM8G" name="require_concept_free.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/traits/require_concept_free.hpp"/>
+            <FILE id="y6Xux1" name="require_concept_member.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/traits/require_concept_member.hpp"/>
+            <FILE id="ezVYRf" name="require_free.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/traits/require_free.hpp"/>
+            <FILE id="zcp7c7" name="require_member.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/traits/require_member.hpp"/>
+            <FILE id="ukNkn9" name="schedule_free.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/traits/schedule_free.hpp"/>
+            <FILE id="hZayIF" name="schedule_member.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/traits/schedule_member.hpp"/>
+            <FILE id="DrTifV" name="set_done_free.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/traits/set_done_free.hpp"/>
+            <FILE id="SqtMvg" name="set_done_member.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/traits/set_done_member.hpp"/>
+            <FILE id="BMhfse" name="set_error_free.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/traits/set_error_free.hpp"/>
+            <FILE id="TvyTDl" name="set_error_member.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/traits/set_error_member.hpp"/>
+            <FILE id="LxnSRO" name="set_value_free.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/traits/set_value_free.hpp"/>
+            <FILE id="rdfe6M" name="set_value_member.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/traits/set_value_member.hpp"/>
+            <FILE id="P9G8Df" name="start_free.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/traits/start_free.hpp"/>
+            <FILE id="KdKlMP" name="start_member.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/traits/start_member.hpp"/>
+            <FILE id="nRFsDo" name="static_query.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/traits/static_query.hpp"/>
+            <FILE id="JVrYE1" name="static_require.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/traits/static_require.hpp"/>
+            <FILE id="Ipmvi7" name="static_require_concept.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/traits/static_require_concept.hpp"/>
+            <FILE id="oYAsGO" name="submit_free.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/traits/submit_free.hpp"/>
+            <FILE id="KevYnK" name="submit_member.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/traits/submit_member.hpp"/>
+          </GROUP>
+          <GROUP id="{3EFCDC7A-1C35-9C42-FA8F-67DCE88A1B42}" name="ts">
+            <FILE id="zTkK5M" name="buffer.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/ts/buffer.hpp"/>
+            <FILE id="NoDijL" name="executor.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/ts/executor.hpp"/>
+            <FILE id="Pje6aO" name="internet.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/ts/internet.hpp"/>
+            <FILE id="hh3vKr" name="io_context.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/ts/io_context.hpp"/>
+            <FILE id="MNAL6S" name="net.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/ts/net.hpp"/>
+            <FILE id="cSzXY6" name="netfwd.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/ts/netfwd.hpp"/>
+            <FILE id="EGpRZT" name="socket.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/ts/socket.hpp"/>
+            <FILE id="nBjsPx" name="timer.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/ts/timer.hpp"/>
+          </GROUP>
+          <GROUP id="{0DC6AD4A-3CAD-2146-863F-1E27E13C6172}" name="windows">
+            <FILE id="lEq5OG" name="basic_object_handle.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/windows/basic_object_handle.hpp"/>
+            <FILE id="KpYaK2" name="basic_overlapped_handle.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/windows/basic_overlapped_handle.hpp"/>
+            <FILE id="AedKWG" name="basic_random_access_handle.hpp" compile="0"
+                  resource="0" file="third_party/asio/asio/include/asio/windows/basic_random_access_handle.hpp"/>
+            <FILE id="PzVvjc" name="basic_stream_handle.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/windows/basic_stream_handle.hpp"/>
+            <FILE id="NxHYRF" name="object_handle.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/windows/object_handle.hpp"/>
+            <FILE id="A3PPDe" name="overlapped_handle.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/windows/overlapped_handle.hpp"/>
+            <FILE id="u13FV8" name="overlapped_ptr.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/windows/overlapped_ptr.hpp"/>
+            <FILE id="QocZ2H" name="random_access_handle.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/windows/random_access_handle.hpp"/>
+            <FILE id="qrV22x" name="stream_handle.hpp" compile="0" resource="0"
+                  file="third_party/asio/asio/include/asio/windows/stream_handle.hpp"/>
+          </GROUP>
+          <FILE id="E0lvZn" name="any_io_executor.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/any_io_executor.hpp"/>
+          <FILE id="DpGHKO" name="append.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/append.hpp"/>
+          <FILE id="DbmkhW" name="as_tuple.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/as_tuple.hpp"/>
+          <FILE id="K0PfKx" name="associated_allocator.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/associated_allocator.hpp"/>
+          <FILE id="Y3IS34" name="associated_cancellation_slot.hpp" compile="0"
+                resource="0" file="third_party/asio/asio/include/asio/associated_cancellation_slot.hpp"/>
+          <FILE id="f0phtp" name="associated_executor.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/associated_executor.hpp"/>
+          <FILE id="HKbgN0" name="associator.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/associator.hpp"/>
+          <FILE id="nBDRcm" name="async_result.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/async_result.hpp"/>
+          <FILE id="BLFPQR" name="awaitable.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/awaitable.hpp"/>
+          <FILE id="LGCNZe" name="basic_datagram_socket.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/basic_datagram_socket.hpp"/>
+          <FILE id="QRcETt" name="basic_deadline_timer.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/basic_deadline_timer.hpp"/>
+          <FILE id="aVWQY2" name="basic_file.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/basic_file.hpp"/>
+          <FILE id="BbRdG8" name="basic_io_object.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/basic_io_object.hpp"/>
+          <FILE id="WfQ1Vj" name="basic_random_access_file.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/basic_random_access_file.hpp"/>
+          <FILE id="GN5KlG" name="basic_raw_socket.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/basic_raw_socket.hpp"/>
+          <FILE id="lUQAZ3" name="basic_readable_pipe.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/basic_readable_pipe.hpp"/>
+          <FILE id="pBIohX" name="basic_seq_packet_socket.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/basic_seq_packet_socket.hpp"/>
+          <FILE id="grTSNa" name="basic_serial_port.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/basic_serial_port.hpp"/>
+          <FILE id="DJRpqL" name="basic_signal_set.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/basic_signal_set.hpp"/>
+          <FILE id="hM7eoj" name="basic_socket.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/basic_socket.hpp"/>
+          <FILE id="tCGhNr" name="basic_socket_acceptor.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/basic_socket_acceptor.hpp"/>
+          <FILE id="XhD2oG" name="basic_socket_iostream.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/basic_socket_iostream.hpp"/>
+          <FILE id="FGCgNV" name="basic_socket_streambuf.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/basic_socket_streambuf.hpp"/>
+          <FILE id="Y6bdCR" name="basic_stream_file.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/basic_stream_file.hpp"/>
+          <FILE id="yJvp1Z" name="basic_stream_socket.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/basic_stream_socket.hpp"/>
+          <FILE id="lrpybe" name="basic_streambuf.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/basic_streambuf.hpp"/>
+          <FILE id="mk0qzL" name="basic_streambuf_fwd.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/basic_streambuf_fwd.hpp"/>
+          <FILE id="OHZtDO" name="basic_waitable_timer.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/basic_waitable_timer.hpp"/>
+          <FILE id="pGVysH" name="basic_writable_pipe.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/basic_writable_pipe.hpp"/>
+          <FILE id="xC39Bi" name="bind_allocator.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/bind_allocator.hpp"/>
+          <FILE id="dUxQ2g" name="bind_cancellation_slot.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/bind_cancellation_slot.hpp"/>
+          <FILE id="CVEq6n" name="bind_executor.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/bind_executor.hpp"/>
+          <FILE id="nA4H7b" name="buffer.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/buffer.hpp"/>
+          <FILE id="bjSNAn" name="buffer_registration.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/buffer_registration.hpp"/>
+          <FILE id="PiMgVb" name="buffered_read_stream.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/buffered_read_stream.hpp"/>
+          <FILE id="cqqD96" name="buffered_read_stream_fwd.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/buffered_read_stream_fwd.hpp"/>
+          <FILE id="rHJYK7" name="buffered_stream.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/buffered_stream.hpp"/>
+          <FILE id="O1Ipfk" name="buffered_stream_fwd.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/buffered_stream_fwd.hpp"/>
+          <FILE id="wTmo8b" name="buffered_write_stream.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/buffered_write_stream.hpp"/>
+          <FILE id="HCFFIK" name="buffered_write_stream_fwd.hpp" compile="0"
+                resource="0" file="third_party/asio/asio/include/asio/buffered_write_stream_fwd.hpp"/>
+          <FILE id="BVJokg" name="buffers_iterator.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/buffers_iterator.hpp"/>
+          <FILE id="d3YgpC" name="cancellation_signal.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/cancellation_signal.hpp"/>
+          <FILE id="ggPpct" name="cancellation_state.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/cancellation_state.hpp"/>
+          <FILE id="LHksDU" name="cancellation_type.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/cancellation_type.hpp"/>
+          <FILE id="HRU3Ab" name="co_spawn.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/co_spawn.hpp"/>
+          <FILE id="kwADNS" name="completion_condition.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/completion_condition.hpp"/>
+          <FILE id="u7llLr" name="compose.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/compose.hpp"/>
+          <FILE id="tUrygY" name="connect.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/connect.hpp"/>
+          <FILE id="zEGnbS" name="connect_pipe.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/connect_pipe.hpp"/>
+          <FILE id="DHENGg" name="coroutine.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/coroutine.hpp"/>
+          <FILE id="G1WeYl" name="deadline_timer.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/deadline_timer.hpp"/>
+          <FILE id="kFVxU7" name="defer.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/defer.hpp"/>
+          <FILE id="e2grDY" name="deferred.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/deferred.hpp"/>
+          <FILE id="OGOWjp" name="detached.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/detached.hpp"/>
+          <FILE id="J0p1qv" name="dispatch.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/dispatch.hpp"/>
+          <FILE id="BhCW81" name="error.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/error.hpp"/>
+          <FILE id="RjmyQF" name="error_code.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/error_code.hpp"/>
+          <FILE id="w70zlk" name="execution.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/execution.hpp"/>
+          <FILE id="XEd3Go" name="execution_context.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/execution_context.hpp"/>
+          <FILE id="MldjZq" name="executor.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/executor.hpp"/>
+          <FILE id="wJ846M" name="executor_work_guard.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/executor_work_guard.hpp"/>
+          <FILE id="xIsu8V" name="file_base.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/file_base.hpp"/>
+          <FILE id="ogBZc3" name="handler_alloc_hook.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/handler_alloc_hook.hpp"/>
+          <FILE id="uD98nI" name="handler_continuation_hook.hpp" compile="0"
+                resource="0" file="third_party/asio/asio/include/asio/handler_continuation_hook.hpp"/>
+          <FILE id="Ji9gPP" name="handler_invoke_hook.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/handler_invoke_hook.hpp"/>
+          <FILE id="g5ZVCm" name="high_resolution_timer.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/high_resolution_timer.hpp"/>
+          <FILE id="dK8O76" name="io_context.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/io_context.hpp"/>
+          <FILE id="vDaxhd" name="io_context_strand.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/io_context_strand.hpp"/>
+          <FILE id="RfIoEM" name="io_service.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/io_service.hpp"/>
+          <FILE id="SVc1zy" name="io_service_strand.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/io_service_strand.hpp"/>
+          <FILE id="IGgX7t" name="is_applicable_property.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/is_applicable_property.hpp"/>
+          <FILE id="HGu0qt" name="is_contiguous_iterator.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/is_contiguous_iterator.hpp"/>
+          <FILE id="ns5MX5" name="is_executor.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/is_executor.hpp"/>
+          <FILE id="cOrqgD" name="is_read_buffered.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/is_read_buffered.hpp"/>
+          <FILE id="ws93Gn" name="is_write_buffered.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/is_write_buffered.hpp"/>
+          <FILE id="JTwpHY" name="multiple_exceptions.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/multiple_exceptions.hpp"/>
+          <FILE id="ob15Zs" name="packaged_task.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/packaged_task.hpp"/>
+          <FILE id="VEtBuG" name="placeholders.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/placeholders.hpp"/>
+          <FILE id="eqto7H" name="post.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/post.hpp"/>
+          <FILE id="isZNtm" name="prefer.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/prefer.hpp"/>
+          <FILE id="YvYMYz" name="prepend.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/prepend.hpp"/>
+          <FILE id="TirnSc" name="query.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/query.hpp"/>
+          <FILE id="gbQyJc" name="random_access_file.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/random_access_file.hpp"/>
+          <FILE id="Fb8eFq" name="read.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/read.hpp"/>
+          <FILE id="xMxvkq" name="read_at.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/read_at.hpp"/>
+          <FILE id="I55RDo" name="read_until.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/read_until.hpp"/>
+          <FILE id="DLIRHi" name="readable_pipe.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/readable_pipe.hpp"/>
+          <FILE id="qdXM8q" name="recycling_allocator.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/recycling_allocator.hpp"/>
+          <FILE id="ldwR6O" name="redirect_error.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/redirect_error.hpp"/>
+          <FILE id="oTRa1T" name="registered_buffer.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/registered_buffer.hpp"/>
+          <FILE id="Z6MSNb" name="require.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/require.hpp"/>
+          <FILE id="rUHVzP" name="require_concept.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/require_concept.hpp"/>
+          <FILE id="j5XItZ" name="serial_port.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/serial_port.hpp"/>
+          <FILE id="cQ32IU" name="serial_port_base.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/serial_port_base.hpp"/>
+          <FILE id="Hefzl9" name="signal_set.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/signal_set.hpp"/>
+          <FILE id="NmNU3k" name="socket_base.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/socket_base.hpp"/>
+          <FILE id="CULEjl" name="spawn.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/spawn.hpp"/>
+          <FILE id="MQ2BZX" name="ssl.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/ssl.hpp"/>
+          <FILE id="VDjd2h" name="static_thread_pool.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/static_thread_pool.hpp"/>
+          <FILE id="q1npD4" name="steady_timer.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/steady_timer.hpp"/>
+          <FILE id="YvtBRk" name="strand.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/strand.hpp"/>
+          <FILE id="g1V3M7" name="stream_file.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/stream_file.hpp"/>
+          <FILE id="mZnMUR" name="streambuf.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/streambuf.hpp"/>
+          <FILE id="gJKipM" name="system_context.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/system_context.hpp"/>
+          <FILE id="gwCBKX" name="system_error.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/system_error.hpp"/>
+          <FILE id="dQuiR7" name="system_executor.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/system_executor.hpp"/>
+          <FILE id="iTDeUZ" name="system_timer.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/system_timer.hpp"/>
+          <FILE id="n43yEA" name="this_coro.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/this_coro.hpp"/>
+          <FILE id="GybI71" name="thread.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/thread.hpp"/>
+          <FILE id="hRnamf" name="thread_pool.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/thread_pool.hpp"/>
+          <FILE id="tbBLuK" name="time_traits.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/time_traits.hpp"/>
+          <FILE id="Exid8S" name="unyield.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/unyield.hpp"/>
+          <FILE id="AfeZXM" name="use_awaitable.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/use_awaitable.hpp"/>
+          <FILE id="RnaQMR" name="use_future.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/use_future.hpp"/>
+          <FILE id="KIxRO1" name="uses_executor.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/uses_executor.hpp"/>
+          <FILE id="b3vNcA" name="version.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/version.hpp"/>
+          <FILE id="PearA9" name="wait_traits.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/wait_traits.hpp"/>
+          <FILE id="DP5fTT" name="writable_pipe.hpp" compile="0" resource="0"
+                file="third_party/asio/asio/include/asio/writable_pipe.hpp"/>
+          <FILE id="BJLJDO" name="write.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/write.hpp"/>
+          <FILE id="dAWhmg" name="write_at.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/write_at.hpp"/>
+          <FILE id="vcz1A4" name="yield.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio/yield.hpp"/>
+        </GROUP>
+        <FILE id="F2j1in" name="asio.hpp" compile="0" resource="0" file="third_party/asio/asio/include/asio.hpp"/>
+      </GROUP>
+      <GROUP id="{EE55559B-191B-362C-F6DD-E32059C647A5}" name="json">
+        <FILE id="uIgQfe" name="json.hpp" compile="0" resource="0" file="third_party/json/single_include/nlohmann/json.hpp"/>
+      </GROUP>
+      <GROUP id="{4E947B9C-2A55-B740-D05B-6B7528AC34D8}" name="websocketpp">
+        <GROUP id="{34504B2F-66D7-4CF3-E223-5382FB758661}" name="base64">
+          <FILE id="N32393" name="base64.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/base64/base64.hpp"/>
+        </GROUP>
+        <GROUP id="{621657FF-B651-BD14-3964-5C92B899AA4E}" name="common">
+          <FILE id="XWswBS" name="asio.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/common/asio.hpp"/>
+          <FILE id="xGcHNz" name="asio_ssl.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/common/asio_ssl.hpp"/>
+          <FILE id="LPMWrW" name="chrono.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/common/chrono.hpp"/>
+          <FILE id="Wpx8vS" name="connection_hdl.hpp" compile="0" resource="0"
+                file="third_party/websocketpp/websocketpp/common/connection_hdl.hpp"/>
+          <FILE id="u2inOw" name="cpp11.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/common/cpp11.hpp"/>
+          <FILE id="Js7l05" name="functional.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/common/functional.hpp"/>
+          <FILE id="crovAw" name="md5.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/common/md5.hpp"/>
+          <FILE id="XJFytv" name="memory.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/common/memory.hpp"/>
+          <FILE id="OsH8rf" name="network.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/common/network.hpp"/>
+          <FILE id="rHpXps" name="platforms.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/common/platforms.hpp"/>
+          <FILE id="eQvueM" name="random.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/common/random.hpp"/>
+          <FILE id="UZf1sa" name="regex.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/common/regex.hpp"/>
+          <FILE id="HID2pk" name="stdint.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/common/stdint.hpp"/>
+          <FILE id="clgKsA" name="system_error.hpp" compile="0" resource="0"
+                file="third_party/websocketpp/websocketpp/common/system_error.hpp"/>
+          <FILE id="r01aan" name="thread.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/common/thread.hpp"/>
+          <FILE id="Zn8UwY" name="time.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/common/time.hpp"/>
+          <FILE id="nTT2WR" name="type_traits.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/common/type_traits.hpp"/>
+        </GROUP>
+        <GROUP id="{931743EE-9118-38CB-AACB-494711431D7D}" name="concurrency">
+          <FILE id="SNBh9f" name="basic.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/concurrency/basic.hpp"/>
+          <FILE id="qf7Cxh" name="none.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/concurrency/none.hpp"/>
+        </GROUP>
+        <GROUP id="{2F8C7792-AA21-C3F5-F360-0E1C7C316CBD}" name="config">
+          <FILE id="nbStbm" name="asio.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/config/asio.hpp"/>
+          <FILE id="q6IH2C" name="asio_client.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/config/asio_client.hpp"/>
+          <FILE id="mF8B1t" name="asio_no_tls.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/config/asio_no_tls.hpp"/>
+          <FILE id="zTIaFD" name="asio_no_tls_client.hpp" compile="0" resource="0"
+                file="third_party/websocketpp/websocketpp/config/asio_no_tls_client.hpp"/>
+          <FILE id="TDUMMw" name="boost_config.hpp" compile="0" resource="0"
+                file="third_party/websocketpp/websocketpp/config/boost_config.hpp"/>
+          <FILE id="N3HhHd" name="core.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/config/core.hpp"/>
+          <FILE id="GWWknB" name="core_client.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/config/core_client.hpp"/>
+          <FILE id="rApXE5" name="debug.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/config/debug.hpp"/>
+          <FILE id="hEbjaG" name="debug_asio.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/config/debug_asio.hpp"/>
+          <FILE id="pi5CGf" name="debug_asio_no_tls.hpp" compile="0" resource="0"
+                file="third_party/websocketpp/websocketpp/config/debug_asio_no_tls.hpp"/>
+          <FILE id="vzkCl0" name="minimal_client.hpp" compile="0" resource="0"
+                file="third_party/websocketpp/websocketpp/config/minimal_client.hpp"/>
+          <FILE id="AXhQcp" name="minimal_server.hpp" compile="0" resource="0"
+                file="third_party/websocketpp/websocketpp/config/minimal_server.hpp"/>
+        </GROUP>
+        <GROUP id="{0D5D7942-72B4-61A0-6DFB-B8A0BD09BED7}" name="extensions">
+          <GROUP id="{7E7F304D-A8B6-3259-60D0-9C0BC500CD38}" name="permessage_deflate">
+            <FILE id="FIN1pe" name="disabled.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/extensions/permessage_deflate/disabled.hpp"/>
+            <FILE id="BJTkrp" name="enabled.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/extensions/permessage_deflate/enabled.hpp"/>
+          </GROUP>
+          <FILE id="pOkcJK" name="extension.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/extensions/extension.hpp"/>
+        </GROUP>
+        <GROUP id="{8AFEEEB0-2E43-83AD-393D-C29E632CA6CA}" name="http">
+          <GROUP id="{36A02A5E-4DBA-CAF8-C53E-B5EA8DB63C7E}" name="impl">
+            <FILE id="QYhVOJ" name="parser.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/http/impl/parser.hpp"/>
+            <FILE id="VAE433" name="request.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/http/impl/request.hpp"/>
+            <FILE id="vVeRnC" name="response.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/http/impl/response.hpp"/>
+          </GROUP>
+          <FILE id="ygRQub" name="constants.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/http/constants.hpp"/>
+          <FILE id="egBnIJ" name="parser.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/http/parser.hpp"/>
+          <FILE id="uIs2UG" name="request.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/http/request.hpp"/>
+          <FILE id="V0Dpvt" name="response.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/http/response.hpp"/>
+        </GROUP>
+        <GROUP id="{D5E1D6A3-CC63-5A19-2CAB-293999E18746}" name="impl">
+          <FILE id="BJP53A" name="connection_impl.hpp" compile="0" resource="0"
+                file="third_party/websocketpp/websocketpp/impl/connection_impl.hpp"/>
+          <FILE id="tuDnyA" name="endpoint_impl.hpp" compile="0" resource="0"
+                file="third_party/websocketpp/websocketpp/impl/endpoint_impl.hpp"/>
+          <FILE id="cWXm89" name="utilities_impl.hpp" compile="0" resource="0"
+                file="third_party/websocketpp/websocketpp/impl/utilities_impl.hpp"/>
+        </GROUP>
+        <GROUP id="{8753BFF0-D1C4-CE5C-11E0-738E8DE2ACED}" name="logger">
+          <FILE id="rEATR2" name="basic.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/logger/basic.hpp"/>
+          <FILE id="gPwaEX" name="levels.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/logger/levels.hpp"/>
+          <FILE id="hkQZGX" name="stub.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/logger/stub.hpp"/>
+          <FILE id="wGm19y" name="syslog.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/logger/syslog.hpp"/>
+        </GROUP>
+        <GROUP id="{98478D9E-4028-D94A-ABA8-06DA6DC67EC3}" name="message_buffer">
+          <FILE id="g2eM6A" name="alloc.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/message_buffer/alloc.hpp"/>
+          <FILE id="gxX2vF" name="message.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/message_buffer/message.hpp"/>
+          <FILE id="BZdE7j" name="pool.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/message_buffer/pool.hpp"/>
+        </GROUP>
+        <GROUP id="{6E24F2A3-D380-D293-02B1-96BD6F28D56F}" name="processors">
+          <FILE id="Obn0Aa" name="base.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/processors/base.hpp"/>
+          <FILE id="DepRyn" name="hybi00.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/processors/hybi00.hpp"/>
+          <FILE id="iYPje4" name="hybi07.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/processors/hybi07.hpp"/>
+          <FILE id="dxvPpL" name="hybi08.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/processors/hybi08.hpp"/>
+          <FILE id="iOAXxW" name="hybi13.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/processors/hybi13.hpp"/>
+          <FILE id="LaLqUS" name="processor.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/processors/processor.hpp"/>
+        </GROUP>
+        <GROUP id="{78C3B1D4-C5C5-0752-DEDE-38DA5E7102E3}" name="random">
+          <FILE id="lR93BQ" name="none.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/random/none.hpp"/>
+          <FILE id="jpP6aS" name="random_device.hpp" compile="0" resource="0"
+                file="third_party/websocketpp/websocketpp/random/random_device.hpp"/>
+        </GROUP>
+        <GROUP id="{E7034D91-15D1-4C0A-5E02-45C55DD35E6B}" name="roles">
+          <FILE id="Nyg83J" name="client_endpoint.hpp" compile="0" resource="0"
+                file="third_party/websocketpp/websocketpp/roles/client_endpoint.hpp"/>
+          <FILE id="QrMOpW" name="server_endpoint.hpp" compile="0" resource="0"
+                file="third_party/websocketpp/websocketpp/roles/server_endpoint.hpp"/>
+        </GROUP>
+        <GROUP id="{39CE7062-3091-B7D0-1B49-A705F4C6F2C1}" name="sha1">
+          <FILE id="AlJaJr" name="sha1.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/sha1/sha1.hpp"/>
+        </GROUP>
+        <GROUP id="{E8D66902-5715-3A32-7464-52567DDED28E}" name="transport">
+          <GROUP id="{BD0B3828-4ABE-7F4D-3275-DCC140E53110}" name="asio">
+            <GROUP id="{ECD06D0C-C607-CC16-A8A3-4A5C496F4B95}" name="security">
+              <FILE id="Cgvq0J" name="base.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/transport/asio/security/base.hpp"/>
+              <FILE id="DknkFq" name="none.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/transport/asio/security/none.hpp"/>
+              <FILE id="XoLmW7" name="tls.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/transport/asio/security/tls.hpp"/>
+            </GROUP>
+            <FILE id="F53Mwu" name="base.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/transport/asio/base.hpp"/>
+            <FILE id="ghggDD" name="connection.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/transport/asio/connection.hpp"/>
+            <FILE id="if3ejG" name="endpoint.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/transport/asio/endpoint.hpp"/>
+          </GROUP>
+          <GROUP id="{783C6BFD-C220-BEA4-74D1-E2AB4F60DB06}" name="base">
+            <FILE id="o0bxbr" name="connection.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/transport/base/connection.hpp"/>
+            <FILE id="c57d2R" name="endpoint.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/transport/base/endpoint.hpp"/>
+          </GROUP>
+          <GROUP id="{8F300D8F-1E44-5FBC-B6B9-501D230AE169}" name="debug">
+            <FILE id="rrfmZT" name="base.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/transport/debug/base.hpp"/>
+            <FILE id="TaeftX" name="connection.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/transport/debug/connection.hpp"/>
+            <FILE id="mWCVXY" name="endpoint.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/transport/debug/endpoint.hpp"/>
+          </GROUP>
+          <GROUP id="{1250E66C-2611-BF41-CC30-2333227E4BBD}" name="iostream">
+            <FILE id="LWxkzU" name="base.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/transport/iostream/base.hpp"/>
+            <FILE id="sHE69S" name="connection.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/transport/iostream/connection.hpp"/>
+            <FILE id="QzGfM0" name="endpoint.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/transport/iostream/endpoint.hpp"/>
+          </GROUP>
+          <GROUP id="{32785C36-7650-554D-5BDB-714A02B16013}" name="stub">
+            <FILE id="AWqg3S" name="base.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/transport/stub/base.hpp"/>
+            <FILE id="fas5VF" name="connection.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/transport/stub/connection.hpp"/>
+            <FILE id="FWp5GP" name="endpoint.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/transport/stub/endpoint.hpp"/>
+          </GROUP>
+        </GROUP>
+        <FILE id="ZTpbaW" name="client.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/client.hpp"/>
+        <FILE id="qme2oT" name="close.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/close.hpp"/>
+        <FILE id="UyCgjA" name="CMakeLists.txt" compile="0" resource="1" file="third_party/websocketpp/websocketpp/CMakeLists.txt"/>
+        <FILE id="bDviKZ" name="connection.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/connection.hpp"/>
+        <FILE id="nFjSir" name="connection_base.hpp" compile="0" resource="0"
+              file="third_party/websocketpp/websocketpp/connection_base.hpp"/>
+        <FILE id="xaPYD1" name="endpoint.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/endpoint.hpp"/>
+        <FILE id="ug3drx" name="endpoint_base.hpp" compile="0" resource="0"
+              file="third_party/websocketpp/websocketpp/endpoint_base.hpp"/>
+        <FILE id="AeeaQd" name="error.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/error.hpp"/>
+        <FILE id="iy3O0B" name="frame.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/frame.hpp"/>
+        <FILE id="tG1DUU" name="server.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/server.hpp"/>
+        <FILE id="hXKwdn" name="uri.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/uri.hpp"/>
+        <FILE id="CN1xj7" name="utf8_validator.hpp" compile="0" resource="0"
+              file="third_party/websocketpp/websocketpp/utf8_validator.hpp"/>
+        <FILE id="F5rEks" name="utilities.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/utilities.hpp"/>
+        <FILE id="cjzQEF" name="version.hpp" compile="0" resource="0" file="third_party/websocketpp/websocketpp/version.hpp"/>
+      </GROUP>
+    </GROUP>
+  </MAINGROUP>
+  <MODULES>
+    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_plugin_client" showAllCode="1" useLocalCopy="0"
+            useGlobalPath="1"/>
+    <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_utils" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_cryptography" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_dsp" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+  </MODULES>
+  <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1" JUCE_VST3_CAN_REPLACE_VST2="0"/>
+  <EXPORTFORMATS>
+    <XCODE_MAC targetFolder="Builds/MacOSX" keepCustomXcodeSchemes="1" smallIcon="jsIMmz"
+               bigIcon="jsIMmz" extraLinkerFlags="-lssl -lcrypto &#10;" xcodeValidArchs="arm64,x86_64">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug" macOSDeploymentTarget="10.15" osxCompatibility="10.15 SDK"
+                       headerPath="$(PROJECT_DIR)/../../third_party/asio/asio/include&#10;$(PROJECT_DIR)/../../third_party/json/single_include&#10;$(PROJECT_DIR)/../../third_party/websocketpp&#10;/opt/homebrew/include&#10;$(HOME)/homebrew/include"
+                       libraryPath="/opt/homebrew/lib&#10;$(HOME)/homebrew/lib"/>
+        <CONFIGURATION isDebug="0" name="Release" macOSDeploymentTarget="10.15" osxCompatibility="10.15 SDK"
+                       libraryPath="/opt/homebrew/lib&#10;$(HOME)/homebrew/lib" headerPath="$(PROJECT_DIR)/../../third_party/asio/asio/include&#10;$(PROJECT_DIR)/../../third_party/json/single_include&#10;$(PROJECT_DIR)/../../third_party/websocketpp&#10;/opt/homebrew/include&#10;$(HOME)/homebrew/include"
+                       binaryPath="$(PROJECT_DIR)/../../dist"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_audio_basics" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_plugin_client" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_utils" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_core" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_dsp" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_cryptography" path="../JUCE/modules"/>
+      </MODULEPATHS>
+    </XCODE_MAC>
+    <VS2022 targetFolder="Builds/VisualStudio2022" extraDefs="JUCE_WEB_BROWSER=1&#10;JUCE_USE_WIN_WEBVIEW2_WITH_STATIC_LINKING=1&#10;JUCE_WIN_PER_MONITOR_DPI_AWARE=1&#10;"
+            externalLibraries="libssl_static.lib;libcrypto_static.lib;crypt32.lib;WebView2LoaderStatic.lib">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug" libraryPath="C:\Program Files\OpenSSL-Win64\lib\VC\x64\MT\&#10;$(ProjectDir)\packages\Microsoft.Web.WebView2.1.0.3405.78\build\native\x64\"
+                       postbuildCommand="xcopy /Y &quot;$(ProjectDir)..\..\Resources\dom\*.*&quot; &quot;$(TargetDir)\The Infinite Crate.vst3\Contents\Resources\&quot; &amp;&amp; xcopy /Y &quot;$(ProjectDir)..\..\Resources\fonts\*.*&quot; &quot;$(TargetDir)\The Infinite Crate.vst3\Contents\Resources\&quot; &amp;&amp; xcopy /Y &quot;$(ProjectDir)..\..\Resources\img\*.*&quot; &quot;$(TargetDir)\The Infinite Crate.vst3\Contents\Resources\&quot;"
+                       headerPath="$(ProjectDir)\..\..\third_party\asio\asio\include\&#10;$(ProjectDir)\..\..\third_party\json\single_include\&#10;$(ProjectDir)\..\..\third_party\websocketpp\&#10;C:\Program Files\OpenSSL-Win64\include\&#10;$(ProjectDir)\packages\Microsoft.Web.WebView2.1.0.3405.78\build\native\include\"/>
+        <CONFIGURATION isDebug="0" name="Release" binaryPath="$(PROJECT_DIR)/../../dist/windows/"
+                       libraryPath="C:\Program Files\OpenSSL-Win64\lib\VC\x64\MT\&#10;$(ProjectDir)\packages\Microsoft.Web.WebView2.1.0.3405.78\build\native\x64\"
+                       postbuildCommand="xcopy /Y &quot;$(ProjectDir)..\..\Resources\dom\*.*&quot; &quot;$(TargetDir)\The Infinite Crate.vst3\Contents\Resources\&quot; &amp;&amp; xcopy /Y &quot;$(ProjectDir)..\..\Resources\fonts\*.*&quot; &quot;$(TargetDir)\The Infinite Crate.vst3\Contents\Resources\&quot; &amp;&amp; xcopy /Y &quot;$(ProjectDir)..\..\Resources\img\*.*&quot; &quot;$(TargetDir)\The Infinite Crate.vst3\Contents\Resources\&quot;"
+                       headerPath="$(ProjectDir)\..\..\third_party\asio\asio\include\&#10;$(ProjectDir)\..\..\third_party\json\single_include\&#10;$(ProjectDir)\..\..\third_party\websocketpp\&#10;C:\Program Files\OpenSSL-Win64\include\&#10;$(ProjectDir)\packages\Microsoft.Web.WebView2.1.0.3405.78\build\native\include\"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_audio_basics" path="/Users/ashud/Code/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="/Users/ashud/Code/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="/Users/ashud/Code/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_plugin_client" path="/Users/ashud/Code/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="/Users/ashud/Code/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_utils" path="/Users/ashud/Code/JUCE/modules"/>
+        <MODULEPATH id="juce_core" path="/Users/ashud/Code/JUCE/modules"/>
+        <MODULEPATH id="juce_cryptography" path="/Users/ashud/Code/JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="/Users/ashud/Code/JUCE/modules"/>
+        <MODULEPATH id="juce_dsp" path="/Users/ashud/Code/JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="/Users/ashud/Code/JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="/Users/ashud/Code/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="/Users/ashud/Code/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="/Users/ashud/Code/JUCE/modules"/>
+      </MODULEPATHS>
+    </VS2022>
+  </EXPORTFORMATS>
+</JUCERPROJECT>

@@ -1,0 +1,12 @@
+*.DS_Store
+*/.DS_Store
+*.vscode
+JuceLibraryCode/
+react_ui/src/lib/juce/juce.js
+react_ui/src/lib/juce/check_native_interop.js
+react_ui/src/components/ui/shadcn/*.tsx
+Builds/
+dist/
+.vite/
+*/.vite/
+resources/dom/index.*

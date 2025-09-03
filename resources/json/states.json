@@ -1,0 +1,74 @@
+{
+    "app-state": {
+        "credentials": {
+            "refresh_token": "string",
+            "access_token": "string",
+            "api_key": "string"
+        },
+        "updateURL": "string"
+    },
+    "lyria-state": {
+        "seed": "float",
+        "temperature": "float",
+        "guidance": "float",
+        "numChannels": "int",
+        "sampleRate": "float",
+        "topk": "int",
+        "bpm": "float",
+        "bpmMode": "string",
+        "density": "float",
+        "useDensity": "bool",
+        "brightness": "float",
+        "useBrightness": "bool",
+        "rootNote": "int",
+        "scaleMode": "string",
+        "majorScale": "bool",
+        "muteBass": "bool",
+        "muteDrums": "bool",
+        "muteOther": "bool",
+        "generationQuality": "string",
+        "initialized": "bool"
+    },
+    "fx-state": {
+        "initialized": "bool",
+        "inputGain": "float",
+        "outputGain": "float",
+        "inputMute": "bool",
+        "outputMute": "bool",
+        "hold": "bool",
+        "bypass": "bool",
+        "distortionType": "string",
+        "leftBuffer": "MonoSamples",
+        "rightBuffer": "MonoSamples",
+        "length": "float"
+    },
+    "prompt-state": {
+        "initialized": "bool",
+        "p0": "float",
+        "p1": "float",
+        "p2": "float",
+        "p3": "float",
+        "p4": "float",
+        "p5": "float",
+        "p6": "float",
+        "p7": "float",
+        "p8": "float",
+        "p9": "float",
+        "p10": "float",
+        "p11": "float",
+        "p12": "float",
+        "prefix": "string",
+        "suffix": "string",
+        "normalize": "bool",
+        "prompts": "vector<Prompt>"
+    },
+    "transport-state": {
+        "initialized": "bool",
+        "connected": "bool",
+        "playing": "bool",
+        "paused": "bool",
+        "buffering": "bool",
+        "loop": "bool",
+        "hold": "bool"
+    }
+}

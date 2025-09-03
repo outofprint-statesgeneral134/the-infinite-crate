@@ -1,0 +1,502 @@
+{
+    "_comments": "Parameters with [daw: true] are exposed to the DAW. Nested parameters have dot syntax (reverb.bypass). Must match zustand state.",
+    "lyria-state": [
+        {
+            "type": "float",
+            "version": 1,
+            "daw": false,
+            "range": [
+                0,
+                1
+            ],
+            "step": 0.01,
+            "default": 1,
+            "label": "",
+            "id": "balance.bass",
+            "name": "balance.bass"
+        },
+        {
+            "type": "float",
+            "version": 1,
+            "daw": false,
+            "range": [
+                0,
+                1
+            ],
+            "step": 0.01,
+            "default": 1,
+            "label": "",
+            "id": "balance.drums",
+            "name": "balance.drums"
+        },
+        {
+            "type": "float",
+            "version": 1,
+            "daw": false,
+            "range": [
+                0,
+                1
+            ],
+            "step": 0.01,
+            "default": 1,
+            "label": "",
+            "id": "balance.other",
+            "name": "balance.other"
+        },
+        {
+            "type": "float",
+            "version": 1,
+            "daw": false,
+            "range": [
+                60,
+                200
+            ],
+            "step": 0.01,
+            "default": 120,
+            "label": "",
+            "id": "bpm",
+            "name": "bpm"
+        },
+        {
+            "type": "choice",
+            "version": 1,
+            "daw": false,
+            "default": "off",
+            "label": "",
+            "id": "bpmMode",
+            "name": "bpmMode",
+            "tooltip": "Instructs the model to generate audio at the specified BPM. \nIt's imprecise. Setting to DAW will use the BPM setting from the DAW. Might need to reset context.",
+            "choices": [
+                "off",
+                "controls",
+                "daw"
+            ]
+        },
+        {
+            "type": "float",
+            "version": 1,
+            "daw": true,
+            "range": [
+                0,
+                1
+            ],
+            "step": 0.01,
+            "default": 0.5,
+            "label": "",
+            "id": "brightness",
+            "name": "bright",
+            "tooltip": "Controls the brightness of the audio. Higher values generate more high \nfrequency content. Turn this off to let the model decide."
+        },
+        {
+            "type": "float",
+            "version": 1,
+            "daw": true,
+            "range": [
+                0,
+                1
+            ],
+            "step": 0.01,
+            "default": 0.25,
+            "label": "",
+            "id": "density",
+            "name": "density",
+            "tooltip": "Controls the density of the audio. Higher values generate busier sounds. \nTurn this off to let the model decide."
+        },
+        {
+            "type": "choice",
+            "version": 1,
+            "daw": false,
+            "default": "quality",
+            "label": "",
+            "id": "generationQuality",
+            "name": "generationQuality",
+            "choices": [
+                "quality",
+                "diversity",
+                "off"
+            ]
+        },
+        {
+            "type": "float",
+            "version": 1,
+            "daw": true,
+            "range": [
+                0,
+                6
+            ],
+            "step": 0.01,
+            "default": 4,
+            "label": "",
+            "id": "guidance",
+            "name": "guidance",
+            "tooltip": "Influences how much the model will try to match the text prompts and parameters (prompts) vs \nthe most recently generated audio (context)."
+        },
+        {
+            "version": 1,
+            "type": "bool",
+            "daw": false,
+            "default": true,
+            "label": "",
+            "id": "majorScale",
+            "name": "majorScale"
+        },
+        {
+            "version": 1,
+            "type": "bool",
+            "daw": true,
+            "default": false,
+            "label": "",
+            "id": "muteBass",
+            "name": "mute bass",
+            "tooltip": "Attempts to mute bass sounds."
+        },
+        {
+            "version": 1,
+            "type": "bool",
+            "daw": true,
+            "default": false,
+            "label": "",
+            "id": "muteDrums",
+            "name": "mute drums",
+            "tooltip": "Attempts to mute drums."
+        },
+        {
+            "version": 1,
+            "type": "bool",
+            "daw": true,
+            "default": false,
+            "label": "",
+            "id": "muteOther",
+            "name": "mute other",
+            "tooltip": "Attempts to mute melodic and textural sounds."
+        },
+        {
+            "type": "int",
+            "version": 1,
+            "daw": false,
+            "range": [
+                1,
+                2
+            ],
+            "step": 1,
+            "default": 2,
+            "label": "",
+            "id": "numChannels",
+            "name": "numChannels"
+        },
+        {
+            "type": "int",
+            "version": 1,
+            "daw": true,
+            "range": [
+                0,
+                12
+            ],
+            "step": 1,
+            "default": 0,
+            "label": "",
+            "id": "rootNote",
+            "name": "key (CM/Am=1)"
+        },
+        {
+            "type": "float",
+            "version": 1,
+            "daw": false,
+            "range": [
+                16000,
+                96000
+            ],
+            "step": 16000,
+            "default": 48000,
+            "label": "",
+            "id": "sampleRate",
+            "name": "sampleRate"
+        },
+        {
+            "type": "choice",
+            "version": 1,
+            "daw": false,
+            "default": "off",
+            "label": "",
+            "id": "scaleMode",
+            "name": "scale",
+            "tooltip": "Instructs the model to generate audio in the specified key. \nIt's imprecise and does not differentiate between major and relative minor. Might need to reset context.",
+            "choices": [
+                "off",
+                "controls"
+            ]
+        },
+        {
+            "type": "float",
+            "version": 1,
+            "daw": false,
+            "range": [
+                0,
+                6
+            ],
+            "step": 0.01,
+            "default": 0,
+            "label": "",
+            "id": "seed",
+            "name": "seed"
+        },
+        {
+            "type": "float",
+            "version": 1,
+            "daw": true,
+            "range": [
+                0,
+                3
+            ],
+            "step": 0.01,
+            "default": 1.1,
+            "label": "",
+            "id": "temperature",
+            "name": "temp",
+            "tooltip": "Influences the randomness of the model. Lower values make the \nmodel more deterministic."
+        },
+        {
+            "type": "int",
+            "version": 1,
+            "daw": true,
+            "range": [
+                1,
+                1000
+            ],
+            "step": 1,
+            "default": 40,
+            "label": "",
+            "id": "topk",
+            "name": "topk",
+            "tooltip": "Top-k sampling is a technique used to control the diversity \nof the generated audio. Lower values make the model more deterministic."
+        },
+        {
+            "version": 1,
+            "type": "bool",
+            "daw": false,
+            "default": false,
+            "label": "",
+            "id": "useBrightness",
+            "name": "useBrightness"
+        },
+        {
+            "version": 1,
+            "type": "bool",
+            "daw": false,
+            "default": false,
+            "label": "",
+            "id": "useDensity",
+            "name": "useDensity"
+        }
+    ],
+    "fx-state": [
+        {
+            "version": 1,
+            "type": "bool",
+            "daw": false,
+            "default": false,
+            "label": "",
+            "id": "bypass",
+            "name": "bypass"
+        },
+        {
+            "type": "choice",
+            "version": 1,
+            "daw": false,
+            "default": "none",
+            "label": "",
+            "id": "distortionType",
+            "name": "distortion type",
+            "choices": [
+                "none",
+                "tanh(kx)/tanh(k)",
+                "sigmoid"
+            ]
+        },
+        {
+            "type": "float",
+            "version": 1,
+            "daw": false,
+            "range": [
+                0,
+                1
+            ],
+            "step": 0.01,
+            "default": 1,
+            "label": "",
+            "id": "inputGain",
+            "name": "input gain",
+            "tooltip": "Input gain controls how much audio is sent to the plugin"
+        },
+        {
+            "version": 1,
+            "type": "bool",
+            "daw": false,
+            "default": false,
+            "label": "",
+            "id": "inputMute",
+            "name": "input mute"
+        },
+        {
+            "version": 1,
+            "type": "bool",
+            "daw": false,
+            "default": false,
+            "label": "",
+            "id": "inputRecord",
+            "name": "input record"
+        },
+        {
+            "type": "float",
+            "version": 1,
+            "daw": false,
+            "range": [
+                0,
+                1
+            ],
+            "step": 0.01,
+            "default": 1,
+            "label": "",
+            "id": "outputGain",
+            "name": "output gain",
+            "tooltip": "Output gain controls the output volume of the plugin"
+        },
+        {
+            "version": 1,
+            "type": "bool",
+            "daw": false,
+            "default": false,
+            "label": "",
+            "id": "outputMute",
+            "name": "output mute"
+        }
+    ],
+    "prompt-state": [
+        {
+            "version": 1,
+            "type": "float",
+            "daw": true,
+            "range": [
+                0,
+                2
+            ],
+            "step": 0.1,
+            "default": 0,
+            "label": "",
+            "id": "p1",
+            "name": "prompt #1"
+        },
+        {
+            "version": 1,
+            "type": "float",
+            "daw": true,
+            "range": [
+                0,
+                2
+            ],
+            "step": 0.1,
+            "default": 0,
+            "label": "",
+            "id": "p2",
+            "name": "prompt #2"
+        },
+        {
+            "version": 1,
+            "type": "float",
+            "daw": true,
+            "range": [
+                0,
+                2
+            ],
+            "step": 0.1,
+            "default": 0,
+            "label": "",
+            "id": "p3",
+            "name": "prompt #3"
+        },
+        {
+            "version": 1,
+            "type": "float",
+            "daw": true,
+            "range": [
+                0,
+                2
+            ],
+            "step": 0.1,
+            "default": 0,
+            "label": "",
+            "id": "p4",
+            "name": "prompt #4"
+        },
+        {
+            "version": 1,
+            "type": "float",
+            "daw": true,
+            "range": [
+                0,
+                2
+            ],
+            "step": 0.1,
+            "default": 0,
+            "label": "",
+            "id": "p5",
+            "name": "prompt #5"
+        },
+        {
+            "version": 1,
+            "type": "float",
+            "daw": true,
+            "range": [
+                0,
+                2
+            ],
+            "step": 0.1,
+            "default": 0,
+            "label": "",
+            "id": "p6",
+            "name": "prompt #6"
+        },
+        {
+            "version": 1,
+            "type": "float",
+            "daw": true,
+            "range": [
+                0,
+                2
+            ],
+            "step": 0.1,
+            "default": 0,
+            "label": "",
+            "id": "p7",
+            "name": "prompt #7"
+        },
+        {
+            "version": 1,
+            "type": "float",
+            "daw": true,
+            "range": [
+                0,
+                2
+            ],
+            "step": 0.1,
+            "default": 0,
+            "label": "",
+            "id": "p8",
+            "name": "prompt #8"
+        },
+        {
+            "version": 1,
+            "type": "float",
+            "daw": true,
+            "range": [
+                0,
+                2
+            ],
+            "step": 0.1,
+            "default": 0,
+            "label": "",
+            "id": "p9",
+            "name": "prompt #9"
+        }
+    ]
+}
