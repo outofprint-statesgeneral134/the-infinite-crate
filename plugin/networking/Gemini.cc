@@ -95,9 +95,9 @@ void Gemini::connectWebSocket() {
       string uri = websocketUrl();
       ws->start(uri);
     }).detach();
-  } catch (websocketpp::exception const& e) {
+  } catch (websocketpp::exception const &e) {
     DBG(e.what());
-  } catch (std::exception const& e) {
+  } catch (std::exception const &e) {
     DBG(e.what());
   } catch (...) {
     DBG("other exception");
@@ -143,15 +143,15 @@ void Gemini::resetContext() {
   onContextClear();
 }
 
-void Gemini::sendTransport(TransportStruct& transportState) {
+void Gemini::sendTransport(TransportStruct &transportState) {
   DBG("Sending transport");
   GeminiPlaybackParams params = convertTransport(transportState);
   transport = params;
-    DBG(to_string(params.playback_control));
+  DBG(to_string(params.playback_control));
   sendMessage(transport);
 }
 
-void Gemini::sendConfig(LyriaStruct& lyriaParams) {
+void Gemini::sendConfig(LyriaStruct &lyriaParams) {
   DBG("Sending config");
   GeminiConfigParams params = convertConfig(lyriaParams);
   lyriaConfig = params;
@@ -207,7 +207,7 @@ GeminiPromptParams Gemini::convertPrompts(vector<Prompt> prompts) {
   return params;
 }
 
-GeminiConfigParams Gemini::convertConfig(LyriaStruct& lyriaParams) {
+GeminiConfigParams Gemini::convertConfig(LyriaStruct &lyriaParams) {
   LiveMusicGenerationConfig c;
   c.temperature = lyriaParams.temperature;
   c.topK = lyriaParams.topk;
@@ -228,13 +228,12 @@ GeminiConfigParams Gemini::convertConfig(LyriaStruct& lyriaParams) {
   c.muteDrums = lyriaParams.muteDrums;
   c.onlyBassAndDrums = lyriaParams.muteOther;
 
-  if (lyriaParams.generationQuality == "quality") {
+  if (lyriaParams.generationMode == "quality") {
     c.musicGenerationMode = MusicGenerationMode::QUALITY;
-  } else if (lyriaParams.generationQuality == "diversity") {
+  } else if (lyriaParams.generationMode == "diversity") {
     c.musicGenerationMode = MusicGenerationMode::DIVERSITY;
-  } else if (lyriaParams.generationQuality == "off") {
-    c.musicGenerationMode =
-        MusicGenerationMode::MUSIC_GENERATION_MODE_UNSPECIFIED;
+  } else if (lyriaParams.generationMode == "vocalization") {
+    c.musicGenerationMode = MusicGenerationMode::VOCALIZATION;
   }
 
   GeminiConfigParams params;
@@ -242,7 +241,7 @@ GeminiConfigParams Gemini::convertConfig(LyriaStruct& lyriaParams) {
   return params;
 }
 
-GeminiPlaybackParams Gemini::convertTransport(TransportStruct& transportState) {
+GeminiPlaybackParams Gemini::convertTransport(TransportStruct &transportState) {
   LiveMusicPlaybackControl control;
   if (transportState.playing) {
     control = LiveMusicPlaybackControl::PLAY;
@@ -256,4 +255,4 @@ GeminiPlaybackParams Gemini::convertTransport(TransportStruct& transportState) {
 
 Gemini::~Gemini() {}
 
-}  // namespace magenta
+} // namespace magenta

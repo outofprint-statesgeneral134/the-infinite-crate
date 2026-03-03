@@ -1,5 +1,5 @@
 /**
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,7 @@
 import React, {useState, useEffect} from 'react';
 import {Card} from '@/components/ui';
 import {Flex} from '@/layout/geometry';
-import {BPMSlider, ScaleToggleGroup} from '@/components/lyria/controls';
+import {BPMSlider, GenerationModeSelect, ScaleToggleGroup} from '@/components/lyria/controls';
 import {Visualizer} from '@/components/inspo';
 import {Div} from '@/layout/geometry';
 import {useDawStore} from '@/data';
@@ -45,7 +45,8 @@ const MusicalPanel: React.FC = () => {
             <ScaleToggleGroup />
           </Flex>
           <Visualizer />
-        </Flex>
+          <GenerationModeSelect />
+        </Flex> 
       </Card>
       {!is48khz && (
         <Div className={warningContainer}>
@@ -56,7 +57,8 @@ const MusicalPanel: React.FC = () => {
   );
 };
 
-const controlsContainer = 'mt-[15px]';
+
+const controlsContainer = 'mt-[15px] z-10';
 const cardContainer = 'pt-6 pb-12 px-5 flex h-[540px] w-full';
 const warningContainer = 'mt-[15px] ml-[10px] mr-[10px] text-center text-sm bg-progress opacity-90 font-medium text-card rounded py-[10px]';
 

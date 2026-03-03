@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,36 +48,38 @@ enum Scale {
   B_FLAT_MAJOR_G_MINOR,
   B_MAJOR_A_FLAT_MINOR,
 };
-NLOHMANN_JSON_SERIALIZE_ENUM(Scale, {
-    {SCALE_UNSPECIFIED, "SCALE_UNSPECIFIED"},
-    {C_MAJOR_A_MINOR, "C_MAJOR_A_MINOR"},
-    {D_FLAT_MAJOR_B_FLAT_MINOR, "D_FLAT_MAJOR_B_FLAT_MINOR"},
-    {D_MAJOR_B_MINOR, "D_MAJOR_B_MINOR"},
-    {E_FLAT_MAJOR_C_MINOR, "E_FLAT_MAJOR_C_MINOR"},
-    {E_MAJOR_D_FLAT_MINOR, "E_MAJOR_D_FLAT_MINOR"},
-    {F_MAJOR_D_MINOR, "F_MAJOR_D_MINOR"},
-    {G_FLAT_MAJOR_E_FLAT_MINOR, "G_FLAT_MAJOR_E_FLAT_MINOR"},
-    {G_MAJOR_E_MINOR, "G_MAJOR_E_MINOR"},
-    {A_FLAT_MAJOR_F_MINOR, "A_FLAT_MAJOR_F_MINOR"},
-    {A_MAJOR_G_FLAT_MINOR, "A_MAJOR_G_FLAT_MINOR"},
-    {B_FLAT_MAJOR_G_MINOR, "B_FLAT_MAJOR_G_MINOR"},
-    {B_MAJOR_A_FLAT_MINOR, "B_MAJOR_A_FLAT_MINOR"},
-});
+NLOHMANN_JSON_SERIALIZE_ENUM(
+    Scale, {
+               {SCALE_UNSPECIFIED, "SCALE_UNSPECIFIED"},
+               {C_MAJOR_A_MINOR, "C_MAJOR_A_MINOR"},
+               {D_FLAT_MAJOR_B_FLAT_MINOR, "D_FLAT_MAJOR_B_FLAT_MINOR"},
+               {D_MAJOR_B_MINOR, "D_MAJOR_B_MINOR"},
+               {E_FLAT_MAJOR_C_MINOR, "E_FLAT_MAJOR_C_MINOR"},
+               {E_MAJOR_D_FLAT_MINOR, "E_MAJOR_D_FLAT_MINOR"},
+               {F_MAJOR_D_MINOR, "F_MAJOR_D_MINOR"},
+               {G_FLAT_MAJOR_E_FLAT_MINOR, "G_FLAT_MAJOR_E_FLAT_MINOR"},
+               {G_MAJOR_E_MINOR, "G_MAJOR_E_MINOR"},
+               {A_FLAT_MAJOR_F_MINOR, "A_FLAT_MAJOR_F_MINOR"},
+               {A_MAJOR_G_FLAT_MINOR, "A_MAJOR_G_FLAT_MINOR"},
+               {B_FLAT_MAJOR_G_MINOR, "B_FLAT_MAJOR_G_MINOR"},
+               {B_MAJOR_A_FLAT_MINOR, "B_MAJOR_A_FLAT_MINOR"},
+           });
 
 /**
  * @brief The mode of music generation.
  * Originally: export enum MusicGenerationMode
  */
 enum MusicGenerationMode {
-  MUSIC_GENERATION_MODE_UNSPECIFIED,
   QUALITY,
   DIVERSITY,
+  VOCALIZATION,
 };
-NLOHMANN_JSON_SERIALIZE_ENUM(MusicGenerationMode, {
-    {MUSIC_GENERATION_MODE_UNSPECIFIED, "MUSIC_GENERATION_MODE_UNSPECIFIED"},
-    {QUALITY, "QUALITY"},
-    {DIVERSITY, "DIVERSITY"},
-});
+NLOHMANN_JSON_SERIALIZE_ENUM(MusicGenerationMode,
+                             {
+                                 {QUALITY, "QUALITY"},
+                                 {DIVERSITY, "DIVERSITY"},
+                                 {VOCALIZATION, "VOCALIZATION"},
+                             });
 
 /**
  * @brief The playback control signal to apply to the music generation.
@@ -90,13 +92,15 @@ enum LiveMusicPlaybackControl {
   STOP,
   RESET_CONTEXT,
 };
-NLOHMANN_JSON_SERIALIZE_ENUM(LiveMusicPlaybackControl, {
-    {PLAYBACK_CONTROL_UNSPECIFIED, "PLAYBACK_CONTROL_UNSPECIFIED"},
-    {PLAY, "PLAY"},
-    {PAUSE, "PAUSE"},
-    {STOP, "STOP"},
-    {RESET_CONTEXT, "RESET_CONTEXT"},
-});
+NLOHMANN_JSON_SERIALIZE_ENUM(LiveMusicPlaybackControl,
+                             {
+                                 {PLAYBACK_CONTROL_UNSPECIFIED,
+                                  "PLAYBACK_CONTROL_UNSPECIFIED"},
+                                 {PLAY, "PLAY"},
+                                 {PAUSE, "PAUSE"},
+                                 {STOP, "STOP"},
+                                 {RESET_CONTEXT, "RESET_CONTEXT"},
+                             });
 
 /**
  * @brief Message to be sent by the system when connecting to the API.
@@ -119,7 +123,7 @@ struct WeightedPrompt {
   // importance of the prompt. Higher weights are more important than lower
   // weights. Weight must not be 0. Weights of all weighted_prompts in this
   // LiveMusicClientContent message will be normalized.
-  optional<float> weight;  // Assuming 'number' maps to float for weight
+  optional<float> weight; // Assuming 'number' maps to float for weight
 };
 NLOHMANN_DEFINE_TYPE_OPTIONAL(WeightedPrompt, text, weight);
 
@@ -168,9 +172,10 @@ struct LiveMusicGenerationConfig {
   // The mode of music generation. Default mode is QUALITY.
   optional<MusicGenerationMode> musicGenerationMode;
 };
-NLOHMANN_DEFINE_TYPE_OPTIONAL(LiveMusicGenerationConfig, temperature, topK, seed,
-                            guidance, bpm, density, brightness, scale, muteBass,
-                            muteDrums, onlyBassAndDrums, musicGenerationMode);
+NLOHMANN_DEFINE_TYPE_OPTIONAL(LiveMusicGenerationConfig, temperature, topK,
+                              seed, guidance, bpm, density, brightness, scale,
+                              muteBass, muteDrums, onlyBassAndDrums,
+                              musicGenerationMode);
 
 /**
  * @brief Messages sent by the client in the LiveMusicClientMessage call.
@@ -189,7 +194,7 @@ struct LiveMusicClientMessage {
   optional<LiveMusicPlaybackControl> playbackControl;
 };
 NLOHMANN_DEFINE_TYPE_OPTIONAL(LiveMusicClientMessage, setup, clientContent,
-                             musicGenerationConfig, playbackControl);
+                              musicGenerationConfig, playbackControl);
 
 /**
  * @brief Sent in response to a `LiveMusicClientSetup` message from the client.
@@ -197,7 +202,7 @@ NLOHMANN_DEFINE_TYPE_OPTIONAL(LiveMusicClientMessage, setup, clientContent,
  */
 struct LiveMusicServerSetupComplete {
   // This struct should be empty, but jsonify doesn't like empty structs.
-    optional<string> success;
+  optional<string> success;
 };
 NLOHMANN_DEFINE_TYPE_OPTIONAL(LiveMusicServerSetupComplete, success);
 
@@ -212,7 +217,7 @@ struct LiveMusicSourceMetadata {
   optional<LiveMusicGenerationConfig> musicGenerationConfig;
 };
 NLOHMANN_DEFINE_TYPE_OPTIONAL(LiveMusicSourceMetadata, clientContent,
-                             musicGenerationConfig);
+                              musicGenerationConfig);
 
 /**
  * @brief Representation of an audio chunk.
@@ -280,7 +285,7 @@ struct LiveMusicServerMessage {
   // }
 };
 NLOHMANN_DEFINE_TYPE_OPTIONAL(LiveMusicServerMessage, setupComplete,
-                             serverContent, filteredPrompt);
+                              serverContent, filteredPrompt);
 
 /**
  * @brief Parameters for setting config for the live music API.
@@ -291,7 +296,7 @@ struct LiveMusicSetConfigParameters {
   LiveMusicGenerationConfig musicGenerationConfig;
 };
 NLOHMANN_DEFINE_TYPE_OPTIONAL(LiveMusicSetConfigParameters,
-                             musicGenerationConfig);
+                              musicGenerationConfig);
 
 /**
  * @brief Parameters for setting weighted prompts for the live music API.
@@ -303,8 +308,7 @@ struct LiveMusicSetWeightedPromptsParameters {
   vector<WeightedPrompt> weightedPrompts;
 };
 NLOHMANN_DEFINE_TYPE_OPTIONAL(LiveMusicSetWeightedPromptsParameters,
-                            weightedPrompts);
-
+                              weightedPrompts);
 
 ////////////////////////////////////////////////////////////
 /// Gemini Request Types
@@ -340,23 +344,23 @@ NLOHMANN_DEFINE_TYPE_OPTIONAL(GeminiConfigParams, music_generation_config);
 ////////////////////////////////////////////////////////////
 
 struct GeminiSetupResponse {
-    LiveMusicClientSetup setup;
+  LiveMusicClientSetup setup;
 };
 NLOHMANN_DEFINE_TYPE_OPTIONAL(GeminiSetupResponse, setup);
 
 struct GeminiConfigResponse {
-    LiveMusicGenerationConfig musicGenerationConfig;
+  LiveMusicGenerationConfig musicGenerationConfig;
 };
 NLOHMANN_DEFINE_TYPE_OPTIONAL(GeminiConfigResponse, musicGenerationConfig);
 
 struct GeminiPromptResponse {
-    LiveMusicClientContent clientContent;
+  LiveMusicClientContent clientContent;
 };
 NLOHMANN_DEFINE_TYPE_OPTIONAL(GeminiPromptResponse, clientContent);
 
 struct GeminiPlaybackResponse {
-    LiveMusicPlaybackControl playbackControl;
+  LiveMusicPlaybackControl playbackControl;
 };
 NLOHMANN_DEFINE_TYPE_OPTIONAL(GeminiPlaybackResponse, playbackControl);
 
-}  // namespace magenta
+} // namespace magenta

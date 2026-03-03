@@ -1,5 +1,5 @@
 /**
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import {StateCreator} from 'zustand';
+import { StateCreator } from 'zustand';
 import * as p from '@/data/params/lyria';
 import * as lyria from '@/data/types/lyria';
 
@@ -50,10 +50,10 @@ export const useLyriaState: StateCreator<LyriaState> = (set) => ({
   muteBass: p.muteBass.default,
   muteDrums: p.muteDrums.default,
   muteOther: p.muteOther.default,
-  generationQuality: p.generationQuality.default,
+  generationMode: p.generationMode.default,
 
   initialized: false,
-  initialize: () => set({initialized: true}),
+  initialize: () => set({ initialized: true }),
 
   updateParam: (newSettings: Partial<LyriaState>) => set(newSettings),
 

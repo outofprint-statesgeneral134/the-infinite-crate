@@ -1,5 +1,5 @@
 /**
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import {floatParam, boolParam, choiceParam, intParam} from '@/data/types';
+import { floatParam, boolParam, choiceParam, intParam } from '@/data/types';
 
 /////////////////////////////////////////
 // AudioGenerationSettings
@@ -180,9 +180,11 @@ export const muteOther = boolParam({
   daw: true,
 });
 
-export const generationQuality = choiceParam({
-  id: 'generationQuality',
-  name: 'generationQuality',
-  choices: ['quality', 'diversity', 'off'],
+export const generationMode = choiceParam({
+  id: 'generationMode',
+  name: 'generationMode',
+  tooltip: 'Indicates to the model to focus on quality or diversity of music. Set to vocalization to let the model generate vocalizations as another instrument (add them as new prompts)',
+  label: 'Generation Mode',
+  choices: ['quality', 'diversity', 'vocalization'],
   default: 'quality',
 });

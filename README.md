@@ -22,7 +22,7 @@ The plugin is built with Typescript/React for the UI (with hot reload for rapid 
 1. Install IDE and dependencies:
     - Xcode + command line tools
     - Download "JUCE and Projucer": https://juce.com/download/
-    - Use [brew](https://brew.sh/) to install "openssl@3"
+    - Use [brew](https://brew.sh/) to install "npm" and "openssl@3"
 2. Clone this repo
 3. Run "cd react_ui && npm run init"
 6. Open the-infinite-crate.jucer file in Projucer:

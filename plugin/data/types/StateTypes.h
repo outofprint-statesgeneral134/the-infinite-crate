@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,14 +54,14 @@ struct LyriaStruct {
   bool muteBass;
   bool muteDrums;
   bool muteOther;
-  string generationQuality;
+  string generationMode;
   bool initialized;
 };
 NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE_WITH_DEFAULT(
     LyriaStruct, seed, temperature, guidance, numChannels, sampleRate, topk,
     outputContainer, bpm, bpmMode, balance, density, useDensity, brightness,
-    useBrightness, rootNote, scaleMode, majorScale, muteBass, muteDrums, muteOther,
-    generationQuality, initialized)
+    useBrightness, rootNote, scaleMode, majorScale, muteBass, muteDrums,
+    muteOther, generationMode, initialized)
 
 // FX state structure
 struct FXStruct {
@@ -120,4 +120,4 @@ NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE_WITH_DEFAULT(TransportStruct, initialized,
                                                 playing, paused, buffering,
                                                 loop, hold)
 
-}  // namespace magenta
+} // namespace magenta

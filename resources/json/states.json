@@ -26,7 +26,7 @@
         "muteBass": "bool",
         "muteDrums": "bool",
         "muteOther": "bool",
-        "generationQuality": "string",
+        "generationMode": "string",
         "initialized": "bool"
     },
     "fx-state": {

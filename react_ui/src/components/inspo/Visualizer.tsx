@@ -52,7 +52,7 @@ const Visualizer: React.FC = () => {
   );
 };
 
-const imageContainer = 'relative mt-[50px] ml-[12px] w-full h-full';
+const imageContainer = 'relative mt-[20px] ml-[12px] w-full h-full';
 const disc1 = 'rounded-full bg-secondary border-[20px] border-primary/2';
 const disc2 = 'rounded-full bg-secondary border-[10px] border-card';
 const disc3 = 'rounded-full border-[10px] border-progress/2';
@@ -60,7 +60,7 @@ const magentaContainer = 'grayscale-[1.0] scale-[0.75]';
 const spinContainer = 'absolute w-[300px] -ml-[5px] -mt-[41px] rounded-full border-[50px] border-card bg-background';
 const spinningContainer = 'animate-spin [animation-duration:_5s]';
 
-const loadContainer = `absolute w-[${loadWidth}px] ml-[958px] -mt-[368px] border-[1px] border-background rounded-[3px] h-[5px]`;
+const loadContainer = `absolute w-[${loadWidth}px] ml-[958px] -mt-[338px] border-[1px] border-background rounded-[3px] h-[5px]`;
 const loadBarContainer = 'h-full w-[var(--width)] bg-progress/75 rounded-[4px]';
 
 export {Visualizer};

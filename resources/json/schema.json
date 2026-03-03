@@ -108,8 +108,8 @@
             "daw": false,
             "default": "quality",
             "label": "",
-            "id": "generationQuality",
-            "name": "generationQuality",
+            "id": "generationMode",
+            "name": "generationMode",
             "choices": [
                 "quality",
                 "diversity",
