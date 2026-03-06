@@ -101,6 +101,8 @@ Debugging on Windows can be done by right clicking on "The Infinite Crate_VST3" 
 
 The codebase leverages C++/JUCE for audio processing and websockets connection to the Gemini API. The UI is built in Typescript using React, and Shadcn UI for components, Zustand for state management. The React app is served using Vite with hot-reload in development mode and compiled with Vite for production. The core codebase components are described below.
 
+![architecture](resources/misc/architecture.png)
+
 ### plugin
 - audio
     - `AudioEngine` - core audio processing engine and buffer management
