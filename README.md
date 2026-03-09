@@ -209,6 +209,12 @@ To delete App Data, delete the following files:
 &nbsp;
 
 -----------------------------
-This is not an officially supported Google product. This project is not
-eligible for the [Google Open Source Software Vulnerability Rewards
-Program](https://bughunters.google.com/open-source-security).
+### License and Disclaimers
+The Infinite Crate is licensed under Apache 2.0. 
+
+The project depends on third party libraries: asio, nlohmann/json, JUCE, shadcn, and websocketpp. Please refer to the [third_party](third_party) directory for information about these libraries.
+
+To compile this project, you will need a valid [JUCE license](https://www.juce.com/get-juce) (free for starter, paid for commercial use).
+
+This is not an officially supported Google product. This project is not eligible for the [Google Open Source Software Vulnerability Rewards Program](https://bughunters.google.com/open-source-security).
+
