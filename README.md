@@ -71,7 +71,9 @@ The project can be built in "development" mode or "production" mode. Development
     - Set "DEV" to false
 
 ### Installing the plugin
-Set the `VST3 Plug-In Custom Location` in Ableton settings to the location of the compiled VST3 in `Builds` or move the VST3/AU into your system VST3/AU folder.
+Set the `VST3 Plug-In Custom Location` in Ableton settings to the location of the compiled VST3 in `Builds` or move the VST3/AU into your system VST3/AU folder
+
+On Mac this is typically `/Library/Audio/Plug-Ins/VST3` for VST3 and `/Library/Audio/Plug-Ins/Components` for AU. On Windows, this is typically `C:\Program Files\Common Files\VST3` for VST3.
 
 ### Debugging
 
