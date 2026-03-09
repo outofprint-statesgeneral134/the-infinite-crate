@@ -25,8 +25,8 @@ constexpr auto DEV = true;
 constexpr auto LOCAL_DEV_SERVER_ADDRESS = "http://localhost:62418/";
 
 constexpr auto AI_STUDIO_URL = "https://aistudio.google.com/apikey";
-constexpr auto ABOUT_URL = "https://g.co/magenta/infinite-crate";
-constexpr auto FEEDBACK_URL = "https://g.co/magenta/infinite-crate-feedback";
+constexpr auto ABOUT_URL = "https://github.com/magenta/the-infinite-crate";
+constexpr auto FEEDBACK_URL = "https://g.co/magenta/discord";
 
 constexpr auto GEMINI_MODEL = "models/lyria-realtime-exp";
 constexpr auto GEMINI_HOST = "generativelanguage.googleapis.com";
